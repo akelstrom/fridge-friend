@@ -10,4 +10,3 @@ const db_config = {
 };
 
 module.exports = db_config;
-
