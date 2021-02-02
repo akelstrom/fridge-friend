@@ -1,0 +1,20 @@
+{
+  "name": "refrigerator",
+  "version": "1.0.0",
+  "description": "An app that helps users keep track of the items in their refrigerator.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akelstrom/refrigerator.git"
+  },
+  "author": "Alexandra Kelstrom, Stefanie Tinsley, Zihao Zhang & Joshua Beedle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akelstrom/refrigerator/issues"
+  },
+  "homepage": "https://github.com/akelstrom/refrigerator#readme"
+}
