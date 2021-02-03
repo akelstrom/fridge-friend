@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* app.use(require('./controllers/')); */
+app.use(require('./controllers/'));
 
 // Turn on connection to the db and server
 // STOPPED HERE
