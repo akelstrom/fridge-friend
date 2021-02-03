@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const db_config = require('../config/connection');
+const sequelize = require('../config/connection');
 
 // Create Inventory model
 class Inventory extends Model {}
@@ -38,7 +38,7 @@ Inventory.init(
         }
     },
     {
-        db_config,
+        sequelize,
         freezeTableName: true,
         underscored: true,
         modelName: 'inventory'

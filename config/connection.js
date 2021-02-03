@@ -1,5 +1,5 @@
-// do we need this import below?
-const mysql = require('mysql2');
+// First Attempt at connection
+/* const mysql = require('mysql2');
 
 require('dotenv').config();
 
@@ -12,4 +12,20 @@ const db_config = {
   port: '3306'
 };
 
-module.exports = db_config;
+module.exports = db_config; */
+
+// Second attempt at connection
+const Sequelize = require('sequelize');
+
+require('dotenv').config();
+
+// Create connection to our database
+const sequelize = process.env.JAWSDB_URL
+? new Sequelize(process.env.JAWSDB_URL)
+: new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
+    host: 'localhost',
+    dialect: 'mysql',
+    port: 3306
+});
+
+module.exports = sequelize;

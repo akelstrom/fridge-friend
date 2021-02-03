@@ -1,6 +1,6 @@
 // Create the Category model here
 const { Model, DataTypes } = require('sequelize');
-const db_config = require('../config/connection');
+const sequelize = require('../config/connection');
 
 // Create Inventory model
 class Category extends Model {}
@@ -34,7 +34,7 @@ Category.init(
         }
     },
     {
-        db_config,
+        sequelize,
         freezeTableName: true,
         underscored: true,
         modelName: 'inventory'
