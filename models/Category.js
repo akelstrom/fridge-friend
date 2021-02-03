@@ -1,11 +1,12 @@
+// Create the Category model here
 const { Model, DataTypes } = require('sequelize');
 const db_config = require('../config/connection');
 
 // Create Inventory model
-class Inventory extends Model {}
+class Category extends Model {}
 
 // Create fields and columns for Inventory model
-Inventory.init(
+Category.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,13 +14,8 @@ Inventory.init(
             primaryKey: true,
             autoIncrement: true
         },
-        item_name: {
+        category_name: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-        quantity: {
-            type: DataTypes.INTEGER,
-            // Do we want to allow null for this?
             allowNull: false
         },
         user_id: {
@@ -29,10 +25,10 @@ Inventory.init(
                 key: 'id'
             }
         },
-        category_id: {
+        item_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'category',
+                model: 'inventory',
                 key: 'id'
             }
         }
@@ -45,4 +41,4 @@ Inventory.init(
     }
 );
 
-module.exports = Inventory;
+module.exports = Category;
