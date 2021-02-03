@@ -34,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* app.use(require('./controllers/')); */
 
 // Turn on connection to the db and server
+// STOPPED HERE
+// Not synching the Category/Inventory Models for some reason
 sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log('Now listening!'));
 });
