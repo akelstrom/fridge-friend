@@ -1,0 +1,1 @@
+// Any helpers functions we create for Handlebars
