@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Inventory } = require('../../models');
+const { Inventory, User } = require('../../models');
 
 // Dummy router method to connect model server
 router.get('/', (req, res) => {

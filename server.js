@@ -3,7 +3,6 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 //const helpers = require('./utils/helpers');
-const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -32,13 +31,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//might need to refactor this
-/* app.use(routes); */
 app.use(require('./controllers/'));
 
 // Turn on connection to the db and server
-// STOPPED HERE
-// Not synching the Category/Inventory Models for some reason
+// Switch to true when clearing/reseting db, should be kept at false
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening!'));
 });
