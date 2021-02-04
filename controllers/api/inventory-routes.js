@@ -86,15 +86,19 @@ router.get('/:category', (req, res) => {
 });
 
 // Create a new inventory item with post
-router.post('/', (req, res) => {
-    // Expects { inventory_name: "Bread" }
+// If we include withAuth from mod 14 uncomment it here, otherwise delete it
+router.post('/', /* withAuth, */ (req, res) => {
+    // Expects { item_name: "Coke", quantity: 12, user_id: 1, category_id: 5 }
     Inventory.create({
-        Inventory_name: req.body.Inventory_name
+        item_name: req.body.item_name,
+        quantity: req.body.quantity,
+        user_id: req.body.user_id,
+        category_id: req.body.category_id
     })
     .then(dbInventoryData => res.json(dbInventoryData))
     .catch(err => {
         console.log(err);
-        res.status(400).json(err);
+        res.status(500).json(err);
     });
 });
 
