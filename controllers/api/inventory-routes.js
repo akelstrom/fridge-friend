@@ -131,7 +131,8 @@ router.put('/:id', /* withAuth, */ (req, res) => {
 });
 
 // Delete an inventory item
-router.delete('/:id', (req, res) => {
+// If we include withAuth from mod 14 uncomment it here, otherwise delete it
+router.delete('/:id', /* withAuth, */ (req, res) => {
     Inventory.destroy({
         where: {
             id: req.params.id
