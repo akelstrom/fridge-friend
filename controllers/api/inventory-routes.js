@@ -4,8 +4,7 @@ const { Inventory, Category, User } = require('../../models');
 // GET all inventory 
 router.get('/', (req, res) => {
     Inventory.findAll({
-        // Uncomment this when associations are finished!
-        /* include: [
+        include: [
             // Include User/Category info with the models
             {
                 model: User,
@@ -14,7 +13,7 @@ router.get('/', (req, res) => {
             {
                 model: Category
             }
-        ] */
+        ]
     })
     .then(dbInventoryData => res.json(dbInventoryData))
     .catch(err => {
@@ -29,17 +28,17 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        // Uncomment this when associations are finished!
-        /* include: [
+        include: [
             // Include User/Category info with the models
             {
                 model: User,
                 attributes: ['username']
             },
             {
-                model: Category
+                model: Category,
+                attributes: ['category_name']
             }
-        ] */
+        ]
     })
     .then(dbInventoryData => {
         if (!dbInventoryData) {
@@ -55,22 +54,22 @@ router.get('/:id', (req, res) => {
 });
 
 // GET inventory by category
-router.get('/:category', (req, res) => {
-    Inventory.findOne({
+router.get('/category/:id', (req, res) => {
+    Inventory.findAll({
         where: {
-            category_name: req.params.category
+            category_id: req.params.id
         },
-        // Uncomment this when associations are finished!
-        /* include: [
+        include: [
             // Include User/Category info with the models
             {
                 model: User,
                 attributes: ['username']
             },
             {
-                model: Category
+                model: Category,
+                attributes: ['category_name']
             }
-        ] */
+        ]
     })
     .then(dbInventoryData => {
         if (!dbInventoryData) {
