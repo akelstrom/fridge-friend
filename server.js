@@ -36,6 +36,6 @@ app.use(require('./controllers/'));
 // Turn on connection to the db and server
 // STOPPED HERE
 // Not synching the Category/Inventory Models for some reason
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening!'));
 });
