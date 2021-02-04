@@ -17,20 +17,14 @@ Category.init(
         category_name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        item_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'inventory',
-                key: 'id'
-            }
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'inventory'
+        modelName: 'category'
     }
 );
 

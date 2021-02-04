@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //might need to refactor this
-app.use(routes);
+/* app.use(routes); */
 app.use(require('./controllers/'));
 
 // Turn on connection to the db and server
