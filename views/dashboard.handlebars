@@ -21,6 +21,36 @@
     {{!-- Sidebar Content --}}
     <div class="w-1/4 h-screen bg-blue-100">
         <p>¡Hola!</p>
+        <form class="add-item-form">
+  <div>
+    <label for="food-item">Item:</label>
+    <input type="text" id="food-item" />
+  </div>
+  <div>
+    <label for="qty">Qty:</label>
+    <input type="text" id="email-signup" />
+  </div>
+  <div>
+    <label for="category">Choose a category</label>
+<select id="categories" name="categories">
+  <option value="fruit">Fruit</option>
+  <option value="veggies">Veggies</option>
+  <option value="meat_seafood">Meat and Seafood</option>
+  <option value="dairy_eggs">Dairy and Eggs</option>
+  <option value="drinks">Drinks</option>
+  <option value="condiments">Condiments</option>
+  <option value="misc">Miscellaneous</option>
+</select>
+  </div>
+  <div>
+    <label for="expiration">Expiration Date</label>
+    <input type="text" id="expiration" />
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
     </div>
     {{!-- Main Content --}}
     <div class="w-3/4 h-screen bg-red-100">
