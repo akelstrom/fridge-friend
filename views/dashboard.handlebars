@@ -24,6 +24,13 @@
     </div>
     {{!-- Main Content --}}
     <div class="w-3/4 h-screen bg-red-100">
-        <p>Hello!</p>
+        {{!-- Card Container for Inventory --}}
+        <div class="container mt-5 mx-auto px-2">
+            <div class="sm:flex">
+                {{#each inventories as |inventory|}}
+                    {{> fridge-info inventory}}
+                {{/each}}
+            </div>
+        </div>
     </div>
 </div>
