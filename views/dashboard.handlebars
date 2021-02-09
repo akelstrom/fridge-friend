@@ -1,37 +1,29 @@
-{{!-- <div class="flex md:flex-row-reverse flex-wrap">
-		
-		 <!--Main Content-->
-         <div class="w-full md:w-4/5 bg-grey-lightest">
-            <div class="container bg-grey-lightest pt-16 px-6">
-               
-            </div>
-         </div>
-		 
-		 <!--Sidebar-->
-         <div class="w-full md:w-1/5 bg-black md:bg-black px-2 text-center fixed pin-b md:pt-8 md:pin-t md:pin-l h-16 md:h-screen md:border-r-4 md:border-grey-dark">
-            <div class="md:relative mx-auto lg:float-right lg:px-6">
-               <ul class="list-reset flex flex-row md:flex-col text-center md:text-left">
-                  <li class="mr-3 flex-1">
-                     <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-pink border-b-2 border-grey-darkest md:border-black hover:border-pink">
-                     <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block">Link</span>
-                     </a>
-                  </li>
-                  <li class="mr-3 flex-1">
-                     <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-pink border-b-2 border-grey-darkest md:border-black hover:border-pink">
-                     <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block">Link</span>
-                     </a>
-                  </li>
-                  <li class="mr-3 flex-1">
-                     <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-pink-dark">
-                     <i class="fas fa-link pr-0 md:pr-3 text-pink"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-white md:font-bold block md:inline-block">Active Link</span>
-                     </a>
-                  </li>
-                  <li class="mr-3 flex-1">
-                     <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-grey-darkest no-underline hover:text-pink border-b-2 border-grey-darkest md:border-black hover:border-pink">
-                     <i class="fas fa-link pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-grey-dark md:text-grey-light block md:inline-block">Link</span>
-                     </a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-      </div> --}}
+{{!-- Nav --}}
+<nav class="flex items-center justify between flex-wrap bg-gray-800 p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-bold text-xl">
+            <img src="/images/favicon-1.png" width="30" height="30" alt="Fridge Friend Logo" class="inline-block" />
+            Fridge Friend
+        </span>
+    </div>
+    <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+        <div>
+            {{!-- This needs to be on the right of the screen --}}
+            <a id="logout" class="inline-flex text-sm px-4 py-2 leading-none 
+                border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0">
+                Logout
+            </a>
+        </div>
+    </div>
+</nav>
+{{!-- Sidebar & Main Content Container --}}
+<div class="container flex">
+    {{!-- Sidebar Content --}}
+    <div class="w-1/4 h-screen bg-blue-100">
+        <p>Hola</p>
+    </div>
+    {{!-- Main Content --}}
+    <div class="w-3/4 h-screen bg-red-100">
+        <p>Hello</p>
+    </div>
+</div>
