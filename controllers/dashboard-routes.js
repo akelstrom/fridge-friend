@@ -4,6 +4,7 @@ const { User, Inventory, Category } = require('../models');
 
 router.get('/', /* withAuth, */ (req, res) => {
     Inventory.findAll({
+        /* Display descending order by expiration date */
         where: {
             user_id: 1
         },
