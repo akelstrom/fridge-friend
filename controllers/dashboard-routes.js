@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Inventory, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', /* withAuth, */ (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Inventory.findAll({
         /* Display descending order by expiration date */
         where: {
@@ -17,7 +17,6 @@ router.get('/', /* withAuth, */ (req, res) => {
     })
     .then(dbInventoryData => {
         const inventories = dbInventoryData.map(inventory => inventory.get({ plain: true }));
-        console.log(inventories);
         res.render('dashboard', {inventories, loggedin: true });
     })
     .catch(err => {
