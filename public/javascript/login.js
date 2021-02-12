@@ -28,10 +28,6 @@ async function signupFormHandler(event) {
   }
 }
 
-document
-  .querySelector(".signup-form")
-  .addEventListener("submit", signupFormHandler);
-
 //js logic for login form -- so far getting a "304??? and errors in the server"
 async function loginFormHandler(event) {
   event.preventDefault();
@@ -48,15 +44,23 @@ async function loginFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     });
-
+    console.log(response);
     if (response.ok) {
-      window.location.replace("/");
+      window.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
   }
 }
 
-document
-  .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+if (document.querySelector(".login-form")) {
+  document
+    .querySelector(".login-form")
+    .addEventListener("submit", loginFormHandler);
+}
+
+if (document.querySelector(".signup-form")) {
+  document
+    .querySelector(".signup-form")
+    .addEventListener("submit", signupFormHandler);
+}
