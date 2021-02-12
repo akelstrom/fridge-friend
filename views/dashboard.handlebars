@@ -25,7 +25,7 @@
     <div class="md:w-3/4 md:h-screen w-screen bg-red-100">
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
-            <h2 class="capitalize text-6xl">hello, username!</h2>
+            <h2 class="capitalize text-6xl">hello, {{username}}!</h2>
             <p class="capitalize text-3xl">here's what's in your fridge!</p>
         </div>
         {{!-- Card Container for Inventory --}}
@@ -37,25 +37,4 @@
             </div>
         </div>
     </div>
-</div>
-{{!-- Choose one, delete other --}}
-<!--Header Alert-->
-<div class="alert-banner w-full fixed top-0">
-    <input type="checkbox" class="hidden" id="banneralert">
-    <label class="close cursor-pointer flex items-center justify-between w-full p-2 bg-red-500 shadow text-white" title="close" for="banneralert">
-        <span><i class="fas fa-bell mx-3"></i><b class="mr-2">Alert!</b>content of the alert</span>
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-        </svg>
-    </label>
-</div>
-<!--Toast Alert -->
-<div class="alert-toast fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm">
-    <input type="checkbox" class="hidden" id="footertoast">
-    <label class="close cursor-pointer flex items-center justify-between w-full p-2 bg-red-500 h-14 rounded shadow-lg text-white" title="close" for="footertoast">
-        <span><i class="fas fa-bell mx-3"></i><b class="mr-2">Alert!</b>content of the alert</span>
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-        </svg>
-    </label>
 </div>

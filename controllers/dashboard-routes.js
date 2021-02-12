@@ -17,6 +17,7 @@ router.get('/', /* withAuth, */ (req, res) => {
     })
     .then(dbInventoryData => {
         const inventories = dbInventoryData.map(inventory => inventory.get({ plain: true }));
+        console.log(inventories);
         res.render('dashboard', {inventories, loggedin: true });
     })
     .catch(err => {
