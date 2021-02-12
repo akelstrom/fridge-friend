@@ -4,5 +4,6 @@ test('format_date() returns a date string', () => {
 
   expect(format_date(date)).toBe('3/20/2020');
 });
+//
 
 const {format_date} = require('../utils/helpers');
