@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 //const helpers = require('./utils/helpers');
 
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -32,6 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
+
 
 // Turn on connection to the db and server
 // Switch to true when clearing/reseting db, should be kept at false
