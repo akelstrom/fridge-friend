@@ -8,7 +8,8 @@
     </div>
     <div class="w-full block justify-end flex-grow sm:flex sm:items-center sm:w-auto">
         <div>
-            <a id="logout" class="inline-flex text-sm px-4 py-2 leading-none 
+            <a id="logout"
+                class="inline-flex text-sm px-4 py-2 leading-none 
                 border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0">
                 Logout
             </a>
@@ -20,7 +21,14 @@
     {{!-- Sidebar Content --}}
     <div class="my-0 md:w-1/4 md:h-screen w-screen bg-blue-100">
         <p>¡Hola!</p>
+        <button type="button" id="myBtn"
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+            Add Item
+        </button>
+
+
     </div>
+
     {{!-- Main Content --}}
     <div class="md:w-3/4 md:h-screen w-screen bg-red-100">
         {{!-- Welcome Message Container --}}
@@ -32,30 +40,107 @@
         <div class="container mt-5 mx-auto px-2">
             <div class="flex-wrap md:flex">
                 {{#each inventories as |inventory|}}
-                    {{> fridge-info inventory}}
+                {{> fridge-info inventory}}
                 {{/each}}
             </div>
         </div>
     </div>
+
+    {{!--Modal--}}
+    <!-- This example requires Tailwind CSS v2.0+ -->
+    <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="modal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                                Add an Item
+                            </h3>
+                            <div class="mt-2">
+                                {{!--Form--}}
+                                <form class="add-item-form">
+                                    <div>
+                                        <label for="food-item">Item:</label>
+                                        <input type="text" id="food-item" />
+                                    </div>
+                                    <div>
+                                        <label for="qty">Qty:</label>
+                                        <input type="text" id="email-signup" />
+                                    </div>
+                                    <div>
+                                        <label for="category">Choose a category</label>
+                                        <select id="categories" name="categories">
+                                            <option value="fruit">Fruit</option>
+                                            <option value="veggies">Veggies</option>
+                                            <option value="meat_seafood">Meat and Seafood</option>
+                                            <option value="dairy_eggs">Dairy and Eggs</option>
+                                            <option value="drinks">Drinks</option>
+                                            <option value="condiments">Condiments</option>
+                                            <option value="misc">Miscellaneous</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="expiration">Expiration Date</label>
+                                        <input type="text" id="expiration" />
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="addItem"
+                    class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    Submit
+                </button>
+                <button type="button" id="close"
+                    class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </div>
 {{!-- Choose one, delete other --}}
 <!--Header Alert-->
 <div class="alert-banner w-full fixed top-0">
     <input type="checkbox" class="hidden" id="banneralert">
-    <label class="close cursor-pointer flex items-center justify-between w-full p-2 bg-red-500 shadow text-white" title="close" for="banneralert">
+    <label class="close cursor-pointer flex items-center justify-between w-full p-2 bg-red-500 shadow text-white"
+        title="close" for="banneralert">
         <span><i class="fas fa-bell mx-3"></i><b class="mr-2">Alert!</b>content of the alert</span>
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+            viewBox="0 0 18 18">
+            <path
+                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+            </path>
         </svg>
     </label>
 </div>
 <!--Toast Alert -->
 <div class="alert-toast fixed bottom-0 right-0 m-8 w-5/6 md:w-full max-w-sm">
     <input type="checkbox" class="hidden" id="footertoast">
-    <label class="close cursor-pointer flex items-center justify-between w-full p-2 bg-red-500 h-14 rounded shadow-lg text-white" title="close" for="footertoast">
+    <label
+        class="close cursor-pointer flex items-center justify-between w-full p-2 bg-red-500 h-14 rounded shadow-lg text-white"
+        title="close" for="footertoast">
         <span><i class="fas fa-bell mx-3"></i><b class="mr-2">Alert!</b>content of the alert</span>
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+            viewBox="0 0 18 18">
+            <path
+                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+            </path>
         </svg>
     </label>
 </div>
