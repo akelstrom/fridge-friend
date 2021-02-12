@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Inventory, Category, User } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET all inventory 
 router.get('/', (req, res) => {
