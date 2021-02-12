@@ -1,15 +1,14 @@
 {{!-- Nav --}}
-<nav class="flex items-center justify between flex-wrap bg-gray-800 p-6">
+<nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="font-bold text-xl">
             <img src="/images/favicon-1.png" width="30" height="30" alt="Fridge Friend Logo" class="inline-block" />
             Fridge Friend
         </span>
     </div>
-    <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
+    <div class="w-full block justify-end flex-grow sm:flex sm:items-center sm:w-auto">
         <div>
-            {{!-- This needs to be on the right of the screen --}}
-            <a id="logout" class="inline-flex text-sm px-4 py-2 leading-none float-right
+            <a id="logout" class="inline-flex text-sm px-4 py-2 leading-none 
                 border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0">
                 Logout
             </a>
@@ -17,13 +16,18 @@
     </div>
 </nav>
 {{!-- Sidebar & Main Content Container --}}
-<div class="flex">
+<div class="flex-wrap md:flex">
     {{!-- Sidebar Content --}}
-    <div class="w-1/4 h-screen bg-blue-100">
+    <div class="my-0 md:w-1/4 md:h-screen w-screen bg-blue-100">
         <p>¡Hola!</p>
     </div>
     {{!-- Main Content --}}
-    <div class="w-3/4 h-screen bg-red-100">
+    <div class="md:w-3/4 md:h-screen w-screen bg-red-100">
+        {{!-- Welcome Message Container --}}
+        <div class="container md:mt-5 mx-auto px-4">
+            <h2 class="capitalize text-6xl">hello, {{username}}!</h2>
+            <p class="capitalize text-3xl">here's what's in your fridge!</p>
+        </div>
         {{!-- Card Container for Inventory --}}
         <div class="container mt-5 mx-auto px-2">
             <div class="flex-wrap md:flex">

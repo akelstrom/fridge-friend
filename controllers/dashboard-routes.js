@@ -4,6 +4,7 @@ const { User, Inventory, Category } = require('../models');
 
 router.get('/', /* withAuth, */ (req, res) => {
     Inventory.findAll({
+        /* Display descending order by expiration date */
         where: {
             user_id: 1
         },
@@ -16,6 +17,7 @@ router.get('/', /* withAuth, */ (req, res) => {
     })
     .then(dbInventoryData => {
         const inventories = dbInventoryData.map(inventory => inventory.get({ plain: true }));
+        console.log(inventories);
         res.render('dashboard', {inventories, loggedin: true });
     })
     .catch(err => {
