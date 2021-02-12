@@ -1,12 +1,13 @@
 const router = require('express').Router();
-const { User, Inventory, Category } = require('../models');
+const { User, Inventory } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Inventory.findAll({
         /* Display descending order by expiration date */
+        order: [['expiration_date', 'DESC']],
         where: {
-            user_id: 1
+            user_id: req.session.user_id
         },
         include: [
             {
