@@ -7,6 +7,12 @@ var btn = document.getElementById("myBtn");
 // Cancel button to close the modal
 var cancel = document.getElementById("close");
 
+// Subtract inventory item qty
+var minus = document.getElementById("minusBtn");
+
+// Add inventory item qty
+var plus = document.getElementById("plusBtn");
+
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
@@ -23,3 +29,16 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+// When the user clicks on the button it subtracts qty 
+minus.onclick = function() {
+  this.parentNode.querySelector('input[type=number]').stepDown()
+} 
+
+// When the user clicks on the button it adds qty 
+plus.onclick = function() {
+  this.parentNode.querySelector('input[type=number]').stepUp()
+} 
+
+
