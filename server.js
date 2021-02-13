@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
-const morgan = require("morgan");
 const helpers = require('./utils/helpers');
 
 const app = express();
@@ -23,7 +22,6 @@ const sess = {
 };
 
 app.use(session(sess));
-app.use(morgan("tiny"));
 
 const hbs = exphbs.create({ helpers });
 
