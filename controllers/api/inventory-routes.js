@@ -86,12 +86,12 @@ router.get('/category/:id', (req, res) => {
 });
 
 // Create a new inventory item with post
-// If we include withAuth from mod 14 uncomment it here, otherwise delete it
-router.post('/', /* withAuth, */ (req, res) => {
-    // Expects { item_name: "Coke", quantity: 12, user_id: 1, category_id: 5 }
+router.post('/', withAuth, (req, res) => {
+    // Expects { item_name: "Coke", quantity: 12, expiration_date: 2021-02-28, user_id: 1, category_id: 5 }
     Inventory.create({
         item_name: req.body.item_name,
         quantity: req.body.quantity,
+        expiration_date: req.body.expiration_date,
         user_id: req.body.user_id,
         category_id: req.body.category_id
     })
@@ -103,8 +103,7 @@ router.post('/', /* withAuth, */ (req, res) => {
 });
 
 // Update an inventory item's name, quantity, category with put
-// If we include withAuth from mod 14 uncomment it here, otherwise delete it
-router.put('/:id', /* withAuth, */ (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     // Expects { item_name: "Coke", quantity: 10, category_id: 5 }
     Inventory.update(
         {
@@ -132,8 +131,7 @@ router.put('/:id', /* withAuth, */ (req, res) => {
 });
 
 // Delete an inventory item
-// If we include withAuth from mod 14 uncomment it here, otherwise delete it
-router.delete('/:id', /* withAuth, */ (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Inventory.destroy({
         where: {
             id: req.params.id

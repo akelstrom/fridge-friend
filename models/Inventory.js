@@ -19,8 +19,11 @@ Inventory.init(
         },
         quantity: {
             type: DataTypes.INTEGER,
-            // Do we want to allow null for this?
             allowNull: false
+        },
+        expiration_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: true
         },
         user_id: {
             type: DataTypes.INTEGER,
