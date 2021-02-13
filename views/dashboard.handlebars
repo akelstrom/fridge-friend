@@ -75,7 +75,9 @@
                                     </div>
                                     <div>
                                         <label for="qty">Qty:</label>
-                                        <input type="text" id="email-signup" />
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
+                                        <input class="quantity" min="1" name="quantity" value="1" type="number" />
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
                                     </div>
                                     <div>
                                         <label for="category">Choose a category</label>
