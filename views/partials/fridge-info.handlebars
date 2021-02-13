@@ -1,17 +1,17 @@
-<div class="flex-1 text-center bg-gray-400 px-5 py-5 m-2 rounded">
+<div class="flex-1 text-center bg-white px-5 m-2 border rounded">
     <div class="items-center">
         <div class="m-4">
-            <h2 class="text-md text-indigo-600 font-bold uppercase">{{item_name}}</h2>
+            <h2 class="pacifico capitalize text-lg text-dark-blue ">{{item_name}}</h2>
             <div class="number-input">
-                <p class="text-sm text-indigo-600">Quantity: </p>
+                <p class="text-sm text-dark-blue">Quantity: </p>
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
                 <input class="quantity" min="1" name="quantity" value="{{quantity}}" type="number" />
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
             </div>
             {{#if expiration_date}}
-            <p class="text-sm text-indigo-600">Expires: {{expiration_date}}</p>
+            <p class="text-sm text-dark-blue">Expires: {{expiration_date}}</p>
             {{/if}}
-            <button class="bg-red-400 hover:bg-red-800 font-bold py-2 px-4 rounded">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
+            <button class="bg-blue-100 hover:bg-blue-200 font-bold py-2 px-4 rounded-lg pacifico text-dark-blue text-sm">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
         </div>
     </div>
 </div>
