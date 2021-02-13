@@ -1,15 +1,15 @@
 {{!-- Nav --}}
-<nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+<nav class="flex items-center justify-between flex-wrap bg-blue-100 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
         <span class="text-3xl">
-            <h1>Fridge Friend</h1>
+            <h1 class="pacifico text-dark-blue">Fridge Friend</h1>
         </span>
     </div>
     <div class="w-full block justify-end flex-grow sm:flex sm:items-center sm:w-auto">
         <div>
             <a id="logout"
                 class="inline-flex text-sm px-4 py-2 leading-none pacifico
-                border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 md:mt-0">
+                border rounded text-dark-blue border-white pacifico font-extralight text-dark-blue text-sm p-1.5 mt-2 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg">
                logout
             </a>
         </div>
@@ -18,10 +18,9 @@
 {{!-- Sidebar & Main Content Container --}}
 <div class="flex-wrap md:flex">
     {{!-- Sidebar Content --}}
-    <div class="my-0 md:w-1/4 md:h-screen w-screen bg-blue-100">
-        <p>¡Hola!</p>
+    <div class="my-0 md:w-1/4 md:h-screen w-screen bg-white">
         <button type="button" id="myBtn"
-            class="pacifico mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+            class="pacifico mt-3 w-full inline-flex justify-center pacifico font-extralight text-dark-blue text-sm p-1.5 mt-2 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg">
             add item
         </button>
 
@@ -29,11 +28,10 @@
     </div>
 
     {{!-- Main Content --}}
-    <div class="md:w-3/4 md:h-screen w-screen bg-red-100">
+    <div class="md:w-3/4 md:h-screen w-screen bg-white">
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
-            <h2 class=" pacifico capitalize text-3xl">hello, {{username}}!</h2>
-            <p class="pacifico capitalize text-xl">here's what's in your fridge</p>
+            <h2 class=" pacifico capitalize text-xl text-dark-blue">hello, {{username}} !here's what's in your fridge</h2>
         </div>
         {{!-- Card Container for Inventory --}}
         <div class="container mt-5 mx-auto px-2">
