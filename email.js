@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const ejs = require('ejs');
 
 require('dotenv').config();
 
@@ -14,7 +15,13 @@ const mailOptions = {
     from: process.env.GMAIL,
     to: process.env.TEST_MAIL,
     subject: 'Sending Email Using Node.js',
-    text: 'That was easy!'
+    html: ejs.renderFile(__dirname + '/test.ejs', function(err, str) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(str);
+        }
+    })
 };
 
 transporter.sendMail(mailOptions, function(error, info) {
