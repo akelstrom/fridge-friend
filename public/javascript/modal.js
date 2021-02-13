@@ -41,4 +41,3 @@ plus.onclick = function() {
   this.parentNode.querySelector('input[type=number]').stepUp()
 } 
 
-
