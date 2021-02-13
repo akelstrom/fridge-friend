@@ -3,12 +3,12 @@
 const addItemFormHandler = async function (event) {
   event.preventDefault();
 
-  const item = document.querySelector('').value;
-  const qty = document.querySelector('').value;
-  const category = document.querySelector('').value;
-  const expDate = document.querySelector('').value;
+  const item = document.querySelector('input[name="TBD"]').value;
+  const qty = document.querySelector('input[name="TBD"]').value;
+  const category = document.querySelector('input[name="TBD"]').value;
+  const expDate = document.querySelector('input[name="TBD"]').value;
 
-  await fetch(``, {
+  await fetch(`/inventory`, {
     method: "PUT",
     body: JSON.stringify({
       item,
