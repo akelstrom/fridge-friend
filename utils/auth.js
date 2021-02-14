@@ -2,7 +2,7 @@
 // Prevents non-users from accessing pages they are not allowed to
 const withAuth = (req, res, next) => {
     if (!req.session.user_id) {
-        res.redirect('/login');
+        res.redirect('/');
     } else {
         next();
     }
