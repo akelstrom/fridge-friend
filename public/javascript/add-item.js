@@ -1,6 +1,6 @@
 //form contents for adding an item will go here
 
-const addItemFormHandler = async function (event) {
+async function newFormHandler(event) {
   event.preventDefault();
 
   const item = document.querySelector('input[name="TBD"]').value;
@@ -8,18 +8,25 @@ const addItemFormHandler = async function (event) {
   const category = document.querySelector('input[name="TBD"]').value;
   const expDate = document.querySelector('input[name="TBD"]').value;
 
-  await fetch(`/inventory`, {
-    method: "PUT",
+  const response = await fetch(`/inventory`, {
+    method: "POST",
     body: JSON.stringify({
-      item,
-      qty,
-      category,
+      item_name,
+      quantity,
+      category_id,
       expDate,
     }),
     headers: {
       "Content-Type": "application/json",
     },
   });
-  alert("Success!");
-  document.location.replace("");
+  
+  if (response.ok) {
+    document.location.replace('/dashboard'); //need to check if this is right
+  } else {
+    alert(response.statusText);
+  }
 };
+
+
+document.querySelector('.addItem').addEventListener('submit', newFormHandler);

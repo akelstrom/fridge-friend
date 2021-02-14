@@ -1,13 +1,21 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { User, Inventory, Category } = require('../models');
 //const withAuth = require('../utils/auth');
 
-router.get('/', /* withAuth, */ (req, res) => {
+router.get('/', /*withAuth,*/ (req, res) => {
     Inventory.findAll({
         /* Display descending order by expiration date */
         where: {
-            user_id: 1
+            user_id: 1 /*req.session.user_id*/
         },
+        /*attributes: [
+            'id',
+            'inventory_name',
+            'quantity',
+            'category_id',
+            'expDate'
+        ],*/
         include: [
             {
                 model: User,
