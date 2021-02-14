@@ -35,14 +35,6 @@ btn.onclick = function() {
   };
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
 // When the user clicks on the button it subtracts qty 
 minus.onclick = function() {
   this.parentNode.querySelector('input[type=number]').stepDown()

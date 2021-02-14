@@ -15,7 +15,7 @@ router.get('/', /*withAuth,*/ (req, res) => {
             'inventory_name',
             'quantity',
             'category_id',
-            'expDate'
+            'expiration_date'
         ],*/
         include: [
             {

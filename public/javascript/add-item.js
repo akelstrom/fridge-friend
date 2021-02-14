@@ -14,7 +14,7 @@ async function newFormHandler(event) {
       item_name,
       quantity,
       category_id,
-      expDate,
+      expiration_date,
     }),
     headers: {
       "Content-Type": "application/json",
