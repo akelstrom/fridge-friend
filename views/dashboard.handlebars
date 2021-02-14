@@ -33,7 +33,7 @@
     <div class="md:w-3/4 md:h-screen w-screen bg-red-100">
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
-            <h2 class="capitalize text-6xl">hello, username!</h2>
+            <h2 class="capitalize text-6xl">hello, {{getUsername inventories}}!</h2>
             <p class="capitalize text-3xl">here's what's in your fridge!</p>
         </div>
         {{!-- Card Container for Inventory --}}
@@ -93,7 +93,11 @@
                                     </div>
                                     <div>
                                         <label for="expiration">Expiration Date</label>
+<<<<<<< HEAD
                                         <input type="date" id="expDate" name="expDate">
+=======
+                                              <input type="date" id="expDate" name="expDate">
+>>>>>>> develop
                                     </div>
                                 </form>
 

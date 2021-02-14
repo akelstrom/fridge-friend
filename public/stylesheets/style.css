@@ -1,14 +1,17 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    /* font-family: 'Lobster', cursive; */
+    font-family: 'Pacifico', cursive;
+
+}
+
+.pacifico {
+    font-family: 'Pacifico', cursive;
+}
 /* Alert Styles Start */
-/*Banner open/load animation*/
-.alert-banner {
-    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-/*Banner close animation*/
-.alert-banner input:checked ~ * {
-    -webkit-animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-            animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;		
-}
 /*Toast open/load animation*/
 .alert-toast {
     -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
