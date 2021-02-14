@@ -1,7 +1,7 @@
 /* Populate User table */
-INSERT INTO user (username, email, password)
+/* INSERT INTO user (username, email, password)
 VALUES
-    ('testuser', 'test@mail.com', 'test1234');
+    ('testuser', 'test@mail.com', 'test1234'); */
 /* Populate Category table */
 INSERT INTO category (category_name)
 VALUES
