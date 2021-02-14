@@ -33,8 +33,13 @@
     <div class="md:w-3/4 md:h-screen w-screen bg-red-100">
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
+            {{#if inventories}}
             <h2 class="capitalize text-6xl">hello, {{getUsername inventories}}!</h2>
             <p class="capitalize text-3xl">here's what's in your fridge!</p>
+            {{else}}
+            <h2 class="capitalize text-6xl">hello, new user!</h2>
+            <p class="capitalize text-3xl">Let's add some items to your fridge!</p>
+            {{/if}}
         </div>
         {{!-- Card Container for Inventory --}}
         <div class="container mt-5 mx-auto px-2">

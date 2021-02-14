@@ -4,8 +4,8 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Inventory.findAll({
-        /* Display descending order by expiration date */
-        order: [['expiration_date', 'DESC']],
+        // Display descending order by expiration date
+        order: [['expiration_date', 'ASC']],
         where: {
             user_id: req.session.user_id
         },
