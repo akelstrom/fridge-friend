@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const helpers = require('./utils/helpers');
+const morgan = require('morgan');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -22,6 +23,7 @@ const sess = {
 };
 
 app.use(session(sess));
+app.use(morgan("tiny"));
 
 const hbs = exphbs.create({ helpers });
 
