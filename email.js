@@ -11,18 +11,17 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-function email() {
-    ejs.renderFile(__dirname + '/test.ejs', function (err, str) {
+function sendWelcomeEmail() {
+    ejs.renderFile(__dirname + '/welcome-email.ejs', function (err, str) {
         if (err) {
             console.log(err);
         } else {
             const mailOptions = {
                 from: process.env.GMAIL,
-                to: process.env.TEST_MAIL,
-                subject: 'Sending Email Using Node.js',
+                to: 'stefaniectinsley@gmail.com, Zihaozhang1@gmail.com, akelstrom@gmail.com',
+                subject: 'Welcome to Fridge Friend!',
                 html: str
             };
-            console.log(str);
             transporter.sendMail(mailOptions, function(error, info) {
                 if (error) {
                     console.log(error);
@@ -34,4 +33,50 @@ function email() {
     });
 };
 
-email();
+function sendExpiringEmail() {
+    ejs.renderFile(__dirname + '/expiring-email.ejs', function (err, str) {
+        if (err) {
+            console.log(err);
+        } else {
+            const mailOptions = {
+                from: process.env.GMAIL,
+                to: 'stefaniectinsley@gmail.com, Zihaozhang1@gmail.com, akelstrom@gmail.com',
+                subject: 'Food Items Expiring Soon!',
+                html: str
+            };
+            transporter.sendMail(mailOptions, function(error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
+            });
+        }
+    });
+};
+
+function sendExpiredEmail() {
+    ejs.renderFile(__dirname + '/expired-email.ejs', function (err, str) {
+        if (err) {
+            console.log(err);
+        } else {
+            const mailOptions = {
+                from: process.env.GMAIL,
+                to: 'stefaniectinsley@gmail.com, Zihaozhang1@gmail.com, akelstrom@gmail.com',
+                subject: 'Food Items Expired!',
+                html: str
+            };
+            transporter.sendMail(mailOptions, function(error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
+            });
+        }
+    });
+};
+
+sendWelcomeEmail();
+sendExpiringEmail();
+sendExpiredEmail();
