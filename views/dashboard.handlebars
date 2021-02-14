@@ -10,7 +10,7 @@
             <a id="logout"
                 class="inline-flex text-sm px-4 py-2 leading-none pacifico
                 border rounded text-dark-blue border-white pacifico font-extralight text-dark-blue text-sm p-1.5 mt-2 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg">
-               logout
+                logout
             </a>
         </div>
     </div>
@@ -31,7 +31,13 @@
     <div class="md:w-3/4 md:h-screen w-screen bg-white">
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
-            <h2 class=" pacifico capitalize text-xl text-dark-blue">hello, {{username}} !here's what's in your fridge</h2>
+            {{#if inventories}}
+            <h2 class="pacifico capitalize text-6xl text-dark-blue">hello, {{getUsername inventories}}!</h2>
+            <p class="capitalize text-3xl">here's what's in your fridge!</p>
+            {{else}}
+            <h2 class="pacifico capitalize text-6xl text-dark-blue">hello, new user!</h2>
+            <p class="capitalize text-3xl">Let's add some items to your fridge!</p>
+            {{/if}}
         </div>
         {{!-- Card Container for Inventory --}}
         <div class="container mt-5 mx-auto px-2">

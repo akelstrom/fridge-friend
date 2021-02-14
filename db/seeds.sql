@@ -1,4 +1,3 @@
-
 /* Populate Category table */
 INSERT INTO category (category_name)
 VALUES
