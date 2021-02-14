@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const { sendWelcomeEmail } = require('../../email');
 
 // GET /api/users
 router.get("/", (req, res) => {
@@ -40,6 +41,8 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbUserData) => {
+      // Sends a Wecome Email to any new user that signs up
+      sendWelcomeEmail(req.body.email);
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
@@ -75,9 +78,6 @@ router.post("/login", (req, res) => {
       res.status(400).json({ message: "Incorrect password!" });
       return;
     }
-console.log(
-  "testing1"
-)
     req.session.save(() => {
       // declare session variables
       req.session.user_id = dbUserData.id;
