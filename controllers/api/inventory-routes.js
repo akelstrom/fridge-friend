@@ -92,7 +92,7 @@ router.post('/', withAuth, (req, res) => {
         item_name: req.body.item_name,
         quantity: req.body.quantity,
         expiration_date: req.body.expiration_date,
-        user_id: req.body.user_id,
+        user_id: req.session.user_id,
         category_id: req.body.category_id
     })
     .then(dbInventoryData => res.json(dbInventoryData))
