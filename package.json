@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "buildcss": "postcss public/stylesheets/style.css -o public/stylesheets/production_style.css"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
   },
   "homepage": "https://github.com/akelstrom/refrigerator#readme",
   "dependencies": {
-    "autoprefixer": "^10.2.4",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
@@ -26,12 +26,15 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "postcss": "^8.2.6",
-    "sequelize": "^6.5.0",
-    "tailwindcss": "^2.0.3"
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "sequelize": "^6.5.0"
   },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "autoprefixer": "^10.2.4",
+    "jest": "^26.6.3",
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.0.3"
   },
   "keywords": []
 }

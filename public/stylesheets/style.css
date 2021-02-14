@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     --light-blue: #ddfff7;
     --blue: #93e1d8;
