@@ -10,13 +10,6 @@ router.get('/', /*withAuth,*/ (req, res) => {
         where: {
             user_id: 1 /*req.session.user_id*/
         },
-        /*attributes: [
-            'id',
-            'inventory_name',
-            'quantity',
-            'category_id',
-            'expiration_date'
-        ],*/
         include: [
             {
                 model: User,

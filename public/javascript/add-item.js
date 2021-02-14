@@ -3,10 +3,10 @@
 async function newFormHandler(event) {
   event.preventDefault();
 
-  const item = document.querySelector('input[name="TBD"]').value;
-  const qty = document.querySelector('input[name="TBD"]').value;
-  const category = document.querySelector('input[name="TBD"]').value;
-  const expDate = document.querySelector('input[name="TBD"]').value;
+  const item_name = document.querySelector('input[name="item_name"]').value;
+  const quantity = document.querySelector('input[name="quantity"]').value;
+  const category_id = document.querySelector('select[name="category_name"]').value;
+  const expiration_date = document.querySelector('input[name="expiration_date"]').value;
 
   const response = await fetch(`/inventory`, {
     method: "POST",
@@ -29,4 +29,5 @@ async function newFormHandler(event) {
 };
 
 
-document.querySelector('.addItem').addEventListener('submit', newFormHandler);
+
+document.getElementById("addItem").addEventListener("click", newFormHandler);
