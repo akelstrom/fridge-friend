@@ -1,5 +1,23 @@
 const nodemailer = require('nodemailer');
 const ejs = require('ejs');
+const db = require('./models');
+//console.log(db);
+const User = db['User'];
+const Inventory = db['Inventory'];
+//console.log(User);
+
+/* db.Inventory.findAll({
+    attributes: ['item_name','expiration_date'],
+    include: [
+        {
+            model: User,
+            attributes: ['email']
+        }
+    ]
+}).then(data => {
+    //console.log(data);
+}); */
+
 
 require('dotenv').config();
 
@@ -11,8 +29,9 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-function sendWelcomeEmail(userEmail) {
-    ejs.renderFile(__dirname + '/welcome-email.ejs', function (err, str) {
+function sendWelcomeEmail(userEmail, username) {
+    ejs.renderFile(__dirname + '/welcome-email.ejs', { username: username }, function(err, str) {
+        console.log(username);
         if (err) {
             console.log(err);
         } else {
@@ -40,7 +59,7 @@ function sendExpiringEmail() {
         } else {
             const mailOptions = {
                 from: process.env.GMAIL,
-                to: 'stefaniectinsley@gmail.com, Zihaozhang1@gmail.com, akelstrom@gmail.com',
+                to: 'josh.beedle@gmail.com',
                 subject: 'Food Items Expiring Soon!',
                 html: str
             };
@@ -62,7 +81,7 @@ function sendExpiredEmail() {
         } else {
             const mailOptions = {
                 from: process.env.GMAIL,
-                to: 'stefaniectinsley@gmail.com, Zihaozhang1@gmail.com, akelstrom@gmail.com',
+                to: 'josh.beedle@gmail.com',
                 subject: 'Food Items Expired!',
                 html: str
             };
@@ -81,7 +100,7 @@ function sendExpiredEmail() {
 sendExpiringEmail();
 sendExpiredEmail(); */
 
-const currentDate = new Date();
+/* const currentDate = new Date();
 const expirationDate = new Date(2021, 01, 16);
 const difference = (expirationDate - currentDate) / (1000*60*60*24);
 //const differenceFormatted = difference / ;
@@ -98,7 +117,9 @@ function testEmail() {
         console.log('Food is still fresh!');
     }
 };
-testEmail();
+testEmail(); */
+
+
 
 module.exports = {
     sendWelcomeEmail,

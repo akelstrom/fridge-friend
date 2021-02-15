@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
   })
     .then((dbUserData) => {
       // Sends a Wecome Email to any new user that signs up
-      sendWelcomeEmail(req.body.email);
+      sendWelcomeEmail(req.body.email, req.body.username);
       req.session.save(() => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
