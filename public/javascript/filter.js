@@ -26,9 +26,3 @@ async function filterFormHandler(event) {
 
 
 document.getElementById("fruit").addEventListener("click", filterFormHandler);
-document.getElementById("veggies").addEventListener("click", filterFormHandler);
-document.getElementById("meatSeafood").addEventListener("click", filterFormHandler);
-document.getElementById("dairyEggs").addEventListener("click", filterFormHandler);
-document.getElementById("drinks").addEventListener("click", filterFormHandler);
-document.getElementById("condiments").addEventListener("click", filterFormHandler);
-document.getElementById("misc").addEventListener("click", filterFormHandler);
