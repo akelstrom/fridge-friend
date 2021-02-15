@@ -18,9 +18,7 @@ async function subtractQtyHandler(event) {
         }
     });
 
-    if (response.ok) {
-        console.log('Updated!');
-    } else {
+    if (!response.ok) {
         alert(response.statusText);
     }
 }
@@ -41,9 +39,7 @@ async function addQtyHandler(event) {
         }
     });
 
-    if (response.ok) {
-        console.log('Updated!');
-    } else {
+    if (!response.ok) {
         alert(response.statusText);
     }
 }
@@ -65,12 +61,10 @@ function inputQtyHandler(event) {
             }
         });
 
-        if (response.ok) {
-            console.log('Updated!');
-        } else {
+        if (!response.ok) {
             alert(response.statusText);
         }
-    }, 3000);  
+    }, 5000);
 }
 
 subtractQtyBtn.forEach(
