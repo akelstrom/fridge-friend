@@ -6,11 +6,8 @@ async function filterFormHandler(event) {
   const category_id = document.querySelector('button[name="category_name"]').value;
 
 
-  const response = await fetch(`/category/`, {
+  const response = await fetch(`/inventory/category/:id`, {
     method: "GET",
-    body: JSON.stringify({
-      category_id,
-    }),
     headers: {
       "Content-Type": "application/json",
     },
