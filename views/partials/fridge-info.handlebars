@@ -9,7 +9,7 @@
                 <button id="add-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
             </div>
             {{#if expiration_date}}
-            <p class="text-sm text-indigo-600">Expires: {{format_date expiration_date}}</p>
+            <p class="text-sm text-indigo-600">Expires: <span id="exp-date" class="text-white">{{format_date expiration_date}}</span></p>
             {{/if}}
             <button class="bg-red-400 hover:bg-red-800 font-bold py-2 px-4 rounded" id="delete-btn" data-id="{{id}}">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
         </div>
