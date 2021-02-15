@@ -1,15 +1,15 @@
-<div class="flex-1 text-center bg-blue-light px-5 m-2 rounded-lg">
+<div class="flex-1 text-center bg-dark-blue px-5 m-2 rounded-lg">
     <div class="items-center">
         <div class="m-4">
-            <h2 class="pacifico capitalize text-lg text-dark-blue">{{item_name}}</h2>
+            <h2 class="pacifico capitalize text-lg text-blue-light">{{item_name}}</h2>
             <div class="number-input">
-                <p class="text-sm text-dark-blue">Quantity: </p>
+                <p class="text-sm text-blue-light">Quantity: </p>
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fas fa-minus"></i></button>
-                <input class="quantity" min="1" name="quantity" value="{{quantity}}" type="number" />
+                <input class="quantity rounded-lg bg-blue-light" min="1" name="quantity" value="{{quantity}}" type="number" />
                 <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
             </div>
-            <p class="text-sm text-dark-blue">Expires: 02/28/21</p>
-            <button class="border border-dark-blue rounded-lg hover:bg-blue-200 font-bold py-2 px-4 rounded-lg pacifico text-dark-blue text-sm">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
+            <p class="text-sm text-blue-light">Expires: 02/28/21</p>
+            <button class="border border-blue-light rounded-lg hover:bg-blue font-bold py-2 px-4 rounded-lg pacifico text-blue-light text-sm hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
         </div>
     </div>
 </div>

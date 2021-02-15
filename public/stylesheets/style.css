@@ -14,6 +14,10 @@ h1 {
 .pacifico {
     font-family: 'Pacifico', cursive;
 }
+
+.fas {
+    color: #ddfff7;
+}
 /* Alert Styles Start */
 /*Toast open/load animation*/
 .alert-toast {
