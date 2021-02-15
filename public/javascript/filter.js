@@ -3,13 +3,8 @@
 async function filterFormHandler(event) {
   event.preventDefault();
 
-  const category_id = document.querySelector('button[name="category_fruit"]').value;
-  const category_id = document.querySelector('button[name="category_veggies"]').value;
-  const category_id = document.querySelector('button[name="category_meatseafood"]').value;
-  const category_id = document.querySelector('button[name="category_dairyeggs"]').value;
-  const category_id = document.querySelector('button[name="category_drinks"]').value;
-  const category_id = document.querySelector('button[name="category_condiments"]').value;
-  const category_id = document.querySelector('button[name="category_misc"]').value;
+  const category_id = document.querySelector('button[name="category_name"]').value;
+
 
   const response = await fetch(`/category/`, {
     method: "GET",
