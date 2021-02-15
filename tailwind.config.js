@@ -16,6 +16,9 @@ module.exports = {
         },
         red: {
           DEFAULT: '#aa4465',
+        },
+        white: {
+          DEFAULT: '#ffffff'
         }
       }
     }
