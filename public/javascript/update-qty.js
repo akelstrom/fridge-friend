@@ -48,30 +48,29 @@ async function addQtyHandler(event) {
     }
 }
 
-/* async */ function inputQtyHandler(event) {
+function inputQtyHandler(event) {
     event.preventDefault();
+    const that = this;
+    setTimeout(async function() {
+        const quantity = that.value;
+        const id = that.dataset.id;
 
-    //change
-    const quantity = this.value;
-    const id = this.dataset.id;
-    console.log(quantity);
-    console.log(id);
+        const response = await fetch(`/api/inventory/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                quantity,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-    /* const response = await fetch(`/api/inventory/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-            quantity,
-        }),
-        headers: {
-            'Content-Type': 'application/json'
+        if (response.ok) {
+            console.log('Updated!');
+        } else {
+            alert(response.statusText);
         }
-    });
-
-    if (response.ok) {
-        window.location.reload();
-    } else {
-        alert(response.statusText);
-    } */
+    }, 3000);  
 }
 
 subtractQtyBtn.forEach(
@@ -86,6 +85,6 @@ addQtyBtn.forEach(
 );
 updateQtyInput.forEach(
     function(input) {
-        input.addEventListener('blur', inputQtyHandler);
+        input.addEventListener('input', inputQtyHandler);
     }
 );

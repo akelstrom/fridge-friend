@@ -5,7 +5,7 @@
             <div class="number-input">
                 <p class="text-sm text-indigo-600">Quantity: </p>
                 <button id="subtract-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
-                <input class="quantity" id="item-qty-input" data-id="{{id}}" min="1" name="quantity" value="{{quantity}}" type="number" />
+                <input class="quantity" id="update-qty-input" data-id="{{id}}" min="1" name="quantity" value="{{quantity}}" type="number" />
                 <button id="add-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
             </div>
             {{#if expiration_date}}
