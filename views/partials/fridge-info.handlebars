@@ -4,9 +4,9 @@
             <h2 class="text-md text-indigo-600 font-bold uppercase">{{item_name}}</h2>
             <div class="number-input">
                 <p class="text-sm text-indigo-600">Quantity: </p>
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
-                <input class="quantity" min="1" name="quantity" value="{{quantity}}" type="number" />
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
+                <button id="subtract-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
+                <input class="quantity" id="item-qty-input" data-id="{{id}}" min="1" name="quantity" value="{{quantity}}" type="number" />
+                <button id="add-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
             </div>
             {{#if expiration_date}}
             <p class="text-sm text-indigo-600">Expires: {{format_date expiration_date}}</p>
