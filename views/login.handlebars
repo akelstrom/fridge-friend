@@ -1,11 +1,49 @@
 <div class="flex flex-wrap">
-  <div class="w-1/2 h-screen bg-pink">
-    {{!-- this is where the icons will go --}}
+  <div class="w-1/2 h-screen bg-blue-light">
+    {{!-- this is where the icons grid below:--}}
+    <div class="h-80 grid grid-rows-3 grid-flow-col gap-10 justify-center mt-16">
+      <div class="py-2">
+        <img src="/images/fridge friend icons-01.png" width="100px" height="100px"
+          class="bg-red border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-05.png" width="100px" height="100px"
+          class="bg-dark-blue border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-06.png" width="100px" height="100px"
+          class="bg-pink border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-07.png" width="100px" height="100px"
+          class="bg-blue border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-08.png" width="100px" height="100px"
+          class="bg-red border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-09.png" width="100px" height="100px"
+          class="bg-dark-blue border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-10.png" width="100px" height="100px"
+          class="bg-pink border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-04.png" width="100px" height="100px"
+          class="bg-blue border-white rounded-full">
+      </div>
+      <div class="py-2">
+        <img src="/images/fridge friend icons-02.png" width="100px" height="100px"
+          class="bg-red border-white rounded-full">
+      </div>
+    </div>
 
     <div class="inset-x-0 bottom-0">
       {{!-- this is where text will go about the app --}}
-      <h1 class="pl-10 text-2xl text-center">Keep your fridge contents up to date!</h1>
-      <p class="text-center pl-5 pr-5 pt-5 text-sm">Welcome to Fridge Friend! Your reliable pal that will
+      <h1 class="pl-10 text-2xl text-center text-dark-blue mt-24">Keep your fridge contents up to date!</h1>
+      <p class="text-center pl-5 pr-5 pt-5 text-sm text-dark-blue">Welcome to Fridge Friend! Your reliable pal that will
         not only help you keep track of the items in your fridge, but also hit you up when things
         are about to go expire! As your friend, we are dedicated to helping you reduce waste, and make the most out of
         the food in your fridge by giving you the ability to add items, adjust items, and
@@ -14,37 +52,40 @@
     </div>
   </div>
 
-  <div class="w-1/2 h-screen">
+{{!-- right half start  --}}
+  <div class="w-1/2 h-screen flex-wrap">
 
-    <div class="title">
-      <h1 class="text-5xl text-center mt-10">Fridge Friend</h1>
+    <div class="title mt-16">
+      <h1 class="text-5xl text-center text-dark-blue">Fridge Friend</h1>
     </div>
     {{!--form for user LOGIN input --}}
-      <form class="login-form p-10">
-        <div>
-          <H6 class="font-extralight text-sm">email</H6>
-          <label for="email-login"></label>
-          <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg" type="text"
-            id="email-login" />
-        </div>
-        <div>
-          <H6 class="font-extralight text-sm">password</H6>
-          <label for="password-login"></label>
-          <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg" type="password"
-            id="password-login" />
-        </div>
-        <div>
-          <button
-            class="pacifico font-extralight text-dark-blue text-sm p-1.5 mt-2 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg"
-            type="submit">login</button>
-        </div>
-      </form>
+    <form class="login-form p-10 ml-28 space-y-10">
+      <div>
+        <H6 class="pacifico text-sm text-dark-blue pb-3">email</H6>
+        <label for="email-login"></label>
+        <input
+          class="shadow-sm border-b-2 border-blue rounded-sm focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg w-96"
+          type="text" id="email-login" />
+      </div>
+      <div>
+        <H6 class="pacifico text-sm text-dark-blue pb-3">password</H6>
+        <label for="password-login"></label>
+        <input
+          class="shadow-sm border-b-2 border-blue rounded-sm focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg w-96"
+          type="password" id="password-login" />
+      </div>
+      <div>
+        <button
+          class="pacifico text-dark-blue bg-blue-light text-sm p-1.5 mt-2 hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg"
+          type="submit">login</button>
+      </div>
+    </form>
 
-{{!-- to be rerouted to the signup page --}}
-       <div class="new-user text-sm p-10">
-        Are you new to Fridge Friend?
-        <br>
-        Click <a href="/signup" class="text-dark-blue">here</a> to sign up!
+    {{!-- to be rerouted to the signup page --}}
+    <div class="new-user text-sm p-20 text-dark-blue text-center">
+      Are you new to Fridge Friend?
+      <br>
+      Click <a href="/signup" class="text-pink">here</a> to sign up!
     </div>
   </div>
 </div>
