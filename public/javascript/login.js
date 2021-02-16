@@ -1,4 +1,3 @@
-
 // javascript logic for signup here
 async function signupFormHandler(event) {
   event.preventDefault();
@@ -28,7 +27,7 @@ async function signupFormHandler(event) {
   }
 }
 
-//js logic for login form -- so far getting a "304??? and errors in the server"
+//js logic for login form -- 
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -45,10 +44,11 @@ async function loginFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
     console.log(response);
-    if (response.ok) {
-      window.location.replace("/dashboard");
+    if (response.status === 400) {
+      // window.location.replace("/dashboard");
+      console.log(response);
     } else {
-      alert(response.statusText);
+      alert(response.status);
     }
   }
 }

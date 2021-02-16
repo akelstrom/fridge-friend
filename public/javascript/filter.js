@@ -1,27 +1,24 @@
 //filter by category
 
+const filterButtons = document.querySelectorAll('button[name=category_name]');
+
 async function filterFormHandler(event) {
   event.preventDefault();
 
-  const category_id = document.querySelector('button[value]').value;
+  const category_id = event.target.value
 
-  console.log(category_id)
-  
-  const response = await fetch(`api/categories/1`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  
-  if (response.ok) {
-    console.log("you did it")
-    document.location.reload("/dashboard");
-  } else {
-    alert(response.statusText);
+  if(category_id === "0") {
+    location.replace("/dashboard");
+  } 
+  else {
+    location.replace("/dashboard?category=" + category_id);
   }
+
 };
 
+filterButtons.forEach(
+  function(button) {
+    button.addEventListener("click", filterFormHandler);
+  }
+)
 
-document.getElementById("fruit").addEventListener("click", filterFormHandler);
-document.getElementById("veggies").addEventListener("click", filterFormHandler);

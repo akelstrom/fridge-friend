@@ -33,7 +33,7 @@ btn.onclick = function() {
       modal.style.display = "none";
     }
   };
-}
+
 
 // When the user clicks on the button it subtracts qty 
 minus.onclick = function() {
@@ -45,3 +45,4 @@ plus.onclick = function() {
   this.parentNode.querySelector('input[type=number]').stepUp()
 } 
 
+}

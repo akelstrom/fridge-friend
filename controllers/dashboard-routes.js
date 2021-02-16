@@ -4,12 +4,15 @@ const { User, Inventory, Category } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    Inventory.findAll({
+    console.log(req.query)
+    let query = {user_id: req.session.user_id};
+    if (req.query.category) {
+        query.category_id = req.query.category;
+    }
+        Inventory.findAll({
         // Display descending order by expiration date
         order: [['expiration_date', 'ASC']],
-        where: {
-            user_id: req.session.user_id
-        },
+        where: query,
         include: [
             {
                 model: User,
@@ -26,5 +29,9 @@ router.get('/', withAuth, (req, res) => {
         res.status(500).json(err);
     });
 });
+
+// router.get("/categories", (req,res) => {
+
+// })
 
 module.exports = router;
