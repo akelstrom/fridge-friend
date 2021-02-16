@@ -47,7 +47,8 @@ if (delButtonIsPressed) {
 }
 </script>
 
-<script>
+{{!-- <script>
+ 
 document.querySelector("plus").addEventListener("click", newFormHandler);
 async function newFormHandler(event) {
     event.preventDefault();
@@ -55,9 +56,12 @@ async function newFormHandler(event) {
     const item_name = document.querySelector('input[name="item_name"]').value.trim;
     const quantity = document.querySelector('input[name="new_quantity"]').value.trim;
     const category_id = document.querySelector('select[name="category_name"]').value.trim;
-  
-    const response = await fetch(`http://localhost:3001/api/inventory/`, {
-      method: "PATCH",
+    
+    const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ];
+    const response = await fetch(`http://localhost:3001/api/inventory/${id}`, {
+      method: "PUT",
       body: JSON.stringify(patch, {
         name: item_name,
         quantity: quantity,
@@ -75,6 +79,8 @@ async function newFormHandler(event) {
       alert(response.statusText);
     }
   };
-  
+
    
-</script>
+</script> --}}
+
+<script>"/javascript/colorcode.js/"</script>
