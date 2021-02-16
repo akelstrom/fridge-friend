@@ -54,36 +54,36 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// GET inventory by category
-router.get('/category/:id', (req, res) => {
-    Inventory.findAll({
-        where: {
-            category_id: req.params.id
-        },
-        include: [
-            // Include User/Category info with the models
-            {
-                model: User,
-                attributes: ['username']
-            },
-            {
-                model: Category,
-                attributes: ['category_name']
-            }
-        ]
-    })
-    .then(dbInventoryData => {
-        if (!dbInventoryData) {
-            res.status(404).json({ message: 'No inventory found with this category!' });
-            return;
-        }
-        res.json(dbInventoryData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-});
+// // GET inventory by category
+// router.get('/category/:id', (req, res) => {
+//     Inventory.findAll({
+//         where: {
+//             category_id: req.params.id
+//         },
+//         include: [
+//             // Include User/Category info with the models
+//             {
+//                 model: User,
+//                 attributes: ['username']
+//             },
+//             {
+//                 model: Category,
+//                 attributes: ['category_name']
+//             }
+//         ]
+//     })
+//     .then(dbInventoryData => {
+//         if (!dbInventoryData) {
+//             res.status(404).json({ message: 'No inventory found with this category!' });
+//             return;
+//         }
+//         res.json(dbInventoryData);
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// });
 
 // Create a new inventory item with post
 router.post('/', withAuth, (req, res) => {

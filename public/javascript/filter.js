@@ -5,9 +5,7 @@ async function filterFormHandler(event) {
 
   const category_id = document.querySelector('button[name="category_name"]').value;
   
-  console.log(category_id)
-  
-  const response = await fetch(`api/inventory/category/${category_id}`, {
+  const response = await fetch(`api/categories/1`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -15,7 +13,8 @@ async function filterFormHandler(event) {
   });
   
   if (response.ok) {
-    document.location.reload();
+    console.log("you did it bitch")
+    document.location.reload("/dashboard");
   } else {
     alert(response.statusText);
   }
