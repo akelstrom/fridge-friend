@@ -70,9 +70,11 @@
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
             {{#if inventories}}
-            <h2 class="pacifico capitalize text-xl text-dark-blue">hello, {{getUsername inventories}}! here's what's in your fridge!</h2>
+            <h2 class="pacifico capitalize text-xl text-dark-blue">hello, {{getUsername inventories}}! here's what's in
+                your fridge!</h2>
             {{else}}
-            <h2 class="pacifico capitalize text-xl text-dark-blue">hello, new user! Let's add some items to your fridge!</h2>
+            <h2 class="pacifico capitalize text-xl text-dark-blue">hello, new user! Let's add some items to your fridge!
+            </h2>
             {{/if}}
         </div>
         {{!-- Card Container for Inventory --}}
@@ -110,7 +112,8 @@
                                 <form class="add-item-form space-y-2">
                                     <div>
                                         <label for="food-item " class="text-dark-blue pacifico rounded-lg">Item:</label>
-                                        <input type="text" id="food-item" class="rounded-lg bg-blue-light" />
+                                        <input type="text" id="food-item" class="rounded-lg bg-blue-light"
+                                            name="item_name" />
                                     </div>
                                     <div>
                                         <label for="qty" class="text-dark-blue pacifico">Qty:</label>
@@ -121,7 +124,7 @@
                                     </div>
                                     <div>
                                         <label for="category" class="text-dark-blue pacifico">Choose a category:</label>
-                                        <select id="categories" name="categories"
+                                        <select id="categories" name="category_name"
                                             class="text-dark-blue pacifico rounded-lg bg-blue-light">
                                             <option value="1">Fruit</option>
                                             <option value="2">Veggies</option>
@@ -134,7 +137,7 @@
                                     </div>
                                     <div>
                                         <label for="expiration" class="text-dark-blue pacifico">Expiration Date:</label>
-                                        <input type="text" id="expiration" class="rounded-lg bg-blue-light" />
+                                        <input type="text" id="expiration" class="rounded-lg bg-blue-light" name="expiration_date" />
                                     </div>
                                 </form>
 
