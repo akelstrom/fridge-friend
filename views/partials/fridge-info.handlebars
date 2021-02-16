@@ -1,4 +1,4 @@
-<div class="flex-1 text-center bg-gray-400 px-5 py-5 m-2 rounded" id"{{id}}">
+<div class="flex-1 text-center bg-gray-400 px-5 py-5 m-2 rounded" id="item-id" data-id="{{id}}">
     <div class="items-center">
         <div class="m-4">
             <h2 class="pacifico capitalize text-lg text-blue-light">{{item_name}}</h2>
@@ -19,29 +19,27 @@
 
 
 <script>
+// Delete Button function
 async function removeDiv(btnstate) {
   var eDiv = document.getElementById("item-id")
   eDiv.parentNode.removeChild(eDiv)
 } 
-
-
+//Fetch Delete function
 document.getElementById("delete-item-btn").addEventListener("click", newFormHandler);
 async function newFormHandler(event) {
   event.preventDefault();
-  
-  const id="{{id}}";
 
-  const response = await fetch(`http://localhost:3001/api/inventory/${id}`, {
+ let delButtonIsPressed = event.target.className === "delete-item-btn"
+
+if (delButtonIsPressed) {
+  let id = event.target.parentElement.dataset.id
+  fetch(`http://localhost:3001/api/inventory/${id}`, {
     method: 'DELETE',
     headers: {
       "Content-Type": "application/json",
     },
-  });
-
-  if (response.ok) {
-    document.location.reload();
-  } else {
-    alert(response.statusText);
+  })
+  .then(response => response.json())
   }
 }
 </script>
