@@ -1,52 +1,29 @@
 function auditExpDate() {
-    const expDatesEl = document.querySelectorAll('#exp-date');
-    console.log(expDatesEl[0]);
-    for (i = 0; i < expDatesEl.length; i++) {
+    const expDates = document.querySelectorAll('.exp-date');
+    const expDatesBorder = document.querySelectorAll('.exp-date-border');
+    for (i = 0; i < expDates.length; i++) {
         const currentDate = new Date();
-        console.log(currentDate);
-        const dateString = expDatesEl[i].innerText;
-        console.log(dateString);
+        const dateString = expDates[i].innerText;
         const expDate = new Date(dateString);
-        console.log(expDate);
         const difference = (expDate - currentDate) / (1000*60*60*24);
-        console.log(difference);
         
         if (difference <= 3 && difference > 0) {
-            console.log('Expiring soon!');
+            expDates[i].classList.remove('text-green-500', 'text-red-500');
+            expDatesBorder[i].classList.remove('border-transparent', 'border-green-500', 'border-red-500');
+            expDates[i].classList.add('text-yellow-500');
+            expDatesBorder[i].classList.add('border-yellow-500');
         } else if (difference <= 0) {
-            console.log('Expired!');
+            expDates[i].classList.remove('text-green-500', 'text-yellow-500');
+            expDatesBorder[i].classList.remove('border-transparent', 'border-green-500', 'border-yellow-500');
+            expDates[i].classList.add('text-red-500');
+            expDatesBorder[i].classList.add('border-red-500');
         } else {
-            expDatesEl[i].classList.remove('text-white');
-            expDatesEl[i].classList.add('text-green-900');
-            console.log('Food is still fresh!');
+            expDates[i].classList.remove('text-yellow-500', 'text-red-500');
+            expDatesBorder[i].classList.remove('border-transparent', 'border-yellow-500', 'border-red-500');
+            expDates[i].classList.add('text-green-500');
+            expDatesBorder[i].classList.add('border-green-500');
         }
     }
 }
 
-/* function auditExpDateBorder() {
-    const expDatesEl = document.querySelectorAll('#exp-date');
-    console.log(expDatesEl[0]);
-    for (i = 0; i < expDatesEl.length; i++) {
-        const currentDate = new Date();
-        console.log(currentDate);
-        const dateString = expDatesEl[i].innerText;
-        console.log(dateString);
-        const expDate = new Date(dateString);
-        console.log(expDate);
-        const difference = (expDate - currentDate) / (1000*60*60*24);
-        console.log(difference);
-        
-        if (difference <= 3 && difference > 0) {
-            console.log('Expiring soon!');
-        } else if (difference <= 0) {
-            console.log('Expired!');
-        } else {
-            expDatesEl[i].classList.remove('text-white');
-            expDatesEl[i].classList.add('text-green-900');
-            console.log('Food is still fresh!');
-        }
-    }
-} */
-
 auditExpDate();
-//auditExpDateBorder();
