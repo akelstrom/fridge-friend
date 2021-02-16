@@ -112,15 +112,19 @@
                                 <form class="add-item-form space-y-2">
                                     <div>
                                         <label for="food-item " class="text-dark-blue pacifico rounded-lg">Item:</label>
-                                        <input type="text" id="food-item" class="rounded-lg bg-blue-light"/>
+                                        <input type="text" id="food-item" class="rounded-lg bg-blue-light" />
                                     </div>
                                     <div>
                                         <label for="qty" class="text-dark-blue pacifico">Qty:</label>
-                                        <input type="text" id="email-signup" class="rounded-lg bg-blue-light" />
+                                        <button type="button" id="minusBtn"><i class="fas fa-minus"></i></button>
+                                        <input class="quantity rounded-lg bg-blue-light" min="1" name="new_quantity"
+                                            value="" type="number" />
+                                        <button type="button" id="plusBtn"><i class="fas fa-plus"></i></button>
                                     </div>
                                     <div>
                                         <label for="category" class="text-dark-blue pacifico">Choose a category:</label>
-                                        <select id="categories" name="categories" class="text-dark-blue pacifico rounded-lg bg-blue-light">
+                                        <select id="categories" name="categories"
+                                            class="text-dark-blue pacifico rounded-lg bg-blue-light">
                                             <option value="1">Fruit</option>
                                             <option value="2">Veggies</option>
                                             <option value="3">Meat and Seafood</option>
