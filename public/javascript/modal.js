@@ -12,6 +12,16 @@ if (modal) {
     modal.style.display = "block";
   };
 
+// Subtract inventory item qty
+var minus = document.getElementById("minusBtn");
+
+// Add inventory item qty
+var plus = document.getElementById("plusBtn");
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+} 
   // When the user clicks on cancel button, close the modal
   cancel.onclick = function () {
     modal.style.display = "none";
@@ -24,3 +34,14 @@ if (modal) {
     }
   };
 }
+
+// When the user clicks on the button it subtracts qty 
+minus.onclick = function() {
+  this.parentNode.querySelector('input[type=number]').stepDown()
+} 
+
+// When the user clicks on the button it adds qty 
+plus.onclick = function() {
+  this.parentNode.querySelector('input[type=number]').stepUp()
+} 
+
