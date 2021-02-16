@@ -1,7 +1,9 @@
-//form contents for adding an item will go here
-
 async function newFormHandler(event) {
   event.preventDefault();
+
+  // Toast Alert
+  const addItemErrorToast = document.querySelector('#alert-toast');
+  const addItemErrorToastContent = document.querySelector('#toast-content');
 
   const item_name = document.querySelector('input[name="item_name"]').value;
   const quantity = document.querySelector('input[name="new_quantity"]').value;
@@ -24,10 +26,9 @@ async function newFormHandler(event) {
   if (response.ok) {
     document.location.reload();
   } else {
-    alert(response.statusText);
+    addItemErrorToastContent.innerHTML = 'Please complete all fields!'
+    addItemErrorToast.classList.remove('hidden');
   }
 };
-
-
 
 document.getElementById("addItem").addEventListener("click", newFormHandler);

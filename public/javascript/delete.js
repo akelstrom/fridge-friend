@@ -3,6 +3,10 @@ const deleteBtn = document.querySelectorAll('.delete-btn');
 async function deleteFormHandler(event) {
     event.preventDefault();
 
+    // Toast Alert
+    const deleteErrorToast = document.querySelector('#alert-toast');
+    const deleteErrorToastContent = document.querySelector('#toast-content');
+
     const id = this.dataset.id;
     console.log(id);
 
@@ -13,7 +17,8 @@ async function deleteFormHandler(event) {
     if (response.ok) {
         window.location.reload();
     } else {
-        alert(response.statusText);
+        deleteErrorToastContent.innerHTML = 'Unable to delete inventory, please try again!'
+        deleteErrorToast.classList.remove('hidden');
     }
 }
 

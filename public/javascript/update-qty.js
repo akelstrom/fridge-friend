@@ -5,6 +5,10 @@ const updateQtyInput = document.querySelectorAll('.update-qty-input');
 async function subtractQtyHandler(event) {
     event.preventDefault();
 
+    // Toast Alert
+    const updateQtyErrorToast = document.querySelector('#alert-toast');
+    const updateQtyErrorToastContent = document.querySelector('#toast-content');
+
     const quantity = this.nextElementSibling.value;
     const id = this.dataset.id;
 
@@ -19,7 +23,8 @@ async function subtractQtyHandler(event) {
     });
 
     if (!response.ok) {
-        alert(response.statusText);
+        updateQtyErrorToastContent.innerHTML = 'Unable to update inventory, please try again!'
+        updateQtyErrorToast.classList.remove('hidden');
     }
 }
 
