@@ -27,12 +27,19 @@ async function signupFormHandler(event) {
   }
 }
 
-//js logic for login form -- 
+//js logic for login form --
 async function loginFormHandler(event) {
   event.preventDefault();
 
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
+
+  //toast alerts for user login errors
+  const toastContent = document
+    .querySelector("#alert-toast")
+    .querySelector("#toast-content");
+
+  const toast = document.querySelector("#alert-toast")
 
   if (email && password) {
     const response = await fetch("/api/users/login", {
@@ -43,12 +50,21 @@ async function loginFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response);
-    if (response.status === 400) {
-      // window.location.replace("/dashboard");
-      console.log(response);
+
+    if (response.ok) {
+        window.location.replace("/dashboard");
+    } else if (response.status === 400) {
+        toastContent.innerHTML = "Your email/password is incorrect. Please try again!";
+        toast.classList.remove("hidden");
+        setTimeout( function() {
+          location.reload();
+        },5000);
+    } else if (response.status === 404) {
+        toastContent.innerHTML = "No user is found with this id. Please try again!";
+        toast.classList.remove("hidden");
     } else {
-      alert(response.status);
+      toastContent.innerHTML = response.status;
+      toast.classList.remove("hidden");
     }
   }
 }
