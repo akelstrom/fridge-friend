@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<div class="flex-1 text-center bg-gray-400 px-5 py-5 m-2 rounded" class="item-id" data-id="{{id}}">
-=======
-<div class="flex-1 text-center bg-dark-blue px-5 m-2 rounded-lg">
->>>>>>> e6a141efad2a6b5871faa382932d654d7b00cfa4
+<div class="flex-1 text-center bg-gray-400 px-5 py-5 m-2 rounded" id"{{id}}">
     <div class="items-center">
         <div class="m-4">
             <h2 class="pacifico capitalize text-lg text-blue-light">{{item_name}}</h2>
@@ -15,14 +11,38 @@
             {{#if expiration_date}}
             <p class="text-sm text-blue-light">Expires: {{format_date expiration_date}}</p>
             {{/if}}
-<<<<<<< HEAD
-            <button type="button" id="delete-item-btn" class="bg-blue-100 hover:bg-blue-200 font-bold py-2 px-4 rounded-lg pacifico text-dark-blue text-sm"> Delete <i class="ml-2 fas fa-trash-alt"></i></button>
-=======
-            <button class="border border-blue-light rounded-lg hover:bg-blue font-bold py-2 px-4 rounded-lg pacifico text-blue-light text-sm hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
->>>>>>> e6a141efad2a6b5871faa382932d654d7b00cfa4
+            <input type="button" onclick="removeDiv(this)" id="delete-item-btn" class="bg-blue-100 hover:bg-blue-200 font-bold py-2 px-4 rounded-lg pacifico text-dark-blue text-sm"> Delete <i class="ml-2 fas fa-trash-alt"></i></button>
         </div>
     </div>
 </div>
 
 
+
+<script>
+async function removeDiv(btnstate) {
+  var eDiv = document.getElementById("item-id")
+  eDiv.parentNode.removeChild(eDiv)
+} 
+
+
+document.getElementById("delete-item-btn").addEventListener("click", newFormHandler);
+async function newFormHandler(event) {
+  event.preventDefault();
+  
+  const id="{{id}}";
+
+  const response = await fetch(`http://localhost:3001/api/inventory/${id}`, {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert(response.statusText);
+  }
+}
+</script>
 <script src="/javascript/delete-item.js"></script>
