@@ -70,11 +70,9 @@
         {{!-- Welcome Message Container --}}
         <div class="container md:mt-5 mx-auto px-4">
             {{#if inventories}}
-            <h2 class="pacifico capitalize text-6xl text-dark-blue">hello, {{getUsername inventories}}!</h2>
-            <p class="capitalize text-3xl">here's what's in your fridge!</p>
+            <h2 class="pacifico capitalize text-xl text-dark-blue">hello, {{getUsername inventories}}! here's what's in your fridge!</h2>
             {{else}}
-            <h2 class="pacifico capitalize text-6xl text-dark-blue">hello, new user!</h2>
-            <p class="capitalize text-3xl">Let's add some items to your fridge!</p>
+            <h2 class="pacifico capitalize text-xl text-dark-blue">hello, new user! Let's add some items to your fridge!</h2>
             {{/if}}
         </div>
         {{!-- Card Container for Inventory --}}
