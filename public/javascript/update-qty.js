@@ -1,6 +1,6 @@
-const subtractQtyBtn = document.querySelectorAll('#subtract-qty-btn');
-const addQtyBtn = document.querySelectorAll('#add-qty-btn');
-const updateQtyInput = document.querySelectorAll('#update-qty-input');
+const subtractQtyBtn = document.querySelectorAll('.subtract-qty-btn');
+const addQtyBtn = document.querySelectorAll('.add-qty-btn');
+const updateQtyInput = document.querySelectorAll('.update-qty-input');
 
 async function subtractQtyHandler(event) {
     event.preventDefault();

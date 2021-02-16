@@ -1,4 +1,4 @@
-const deleteBtn = document.querySelectorAll('#delete-btn');
+const deleteBtn = document.querySelectorAll('.delete-btn');
 
 async function deleteFormHandler(event) {
     event.preventDefault();
