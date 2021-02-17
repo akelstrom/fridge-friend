@@ -21,10 +21,14 @@ var plus = document.getElementById("plusBtn");
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
+  /* const errorToast = document.querySelector('#alert-toast');
+  errorToast.classList.add('hidden'); */
 } 
   // When the user clicks on cancel button, close the modal
   cancel.onclick = function () {
     modal.style.display = "none";
+    const errorToast = document.querySelector('#alert-toast');
+  errorToast.classList.add('hidden');
   };
 
   // When the user clicks anywhere outside of the modal, close it
