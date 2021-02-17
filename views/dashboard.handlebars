@@ -62,6 +62,7 @@
             add item
         </button>
 
+
         <div class="category-buttons">
             <h6 class="pacifico text-lg text-dark-blue">Filter by Category</h6>
              <button type="button" id="all" name="category_name"
@@ -109,8 +110,8 @@
         <h2 class="pacifico capitalize text-4xl text-dark-blue center">Shopping List</h2>
 
         {{/if}} --}}
-    </div>
 
+    </div>
     {{!-- Main Content --}}
     <div class="md:w-3/4 md:h-screen w-screen bg-white">
         {{!-- Welcome Message Container --}}
@@ -132,19 +133,15 @@
             </div>
         </div>
     </div>
-
     {{!--Modal--}}
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="modal">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-
             <div class="fixed inset-0 transition-opacity" aria-hidden="true">
                 <div class="absolute inset-0 bg-dark-blue opacity-50"></div>
             </div>
-
             <!-- This element is to trick the browser into centering the modal contents. -->
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
             <div class="inline-block align-bottom bg-pink rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
                 role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                 <div class="bg-pink px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -183,10 +180,9 @@
                                     </div>
                                     <div>
                                         <label for="expiration" class="text-dark-blue pacifico">Expiration Date:</label>
-                                        <input type="text" id="expiration" class="rounded-lg bg-blue-light" name="expiration_date" />
+                                        <input type="date" min="" id="expDate" name="expiration_date" class="rounded-lg bg-blue-light">
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </div>
@@ -204,6 +200,7 @@
     </div>
 </div>
 
-
-</div>
+<script src="/javascript/delete.js"></script>
+<script src="/javascript/update-qty.js"></script>
+<script src="/javascript/exp-date.js"></script>
 <script src="/javascript/add-item.js"></script>

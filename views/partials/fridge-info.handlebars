@@ -4,14 +4,18 @@
             <h2 class="pacifico capitalize text-lg text-blue-light">{{item_name}}</h2>
             <div class="number-input">
                 <p class="text-sm text-blue-light">Quantity: </p>
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fas fa-minus"></i></button>
-                <input class="quantity rounded-lg bg-blue-light" min="1" name="quantity" value="{{quantity}}" type="number" />
-                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"><i class="fas fa-plus"></i></button>
+                <button class="subtract-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
+                <input class="quantity update-qty-input rounded-lg bg-blue-light" data-id="{{id}}" min="1" name="quantity" value="{{quantity}}" type="number" />
+                <button class="add-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i class="fas fa-plus"></i></button>
             </div>
             {{#if expiration_date}}
-            <p class="text-sm text-blue-light">Expires: {{format_date expiration_date}}</p>
+            <div class="exp-date-border border rounded border-transparent">
+                <p class="text-sm text-blue-light">Expires: 
+                    <span class="exp-date">{{format_date expiration_date}}</span>
+                </p>
+            </div>
             {{/if}}
-            <button class="border border-blue-light rounded-lg hover:bg-blue font-bold py-2 px-4 rounded-lg pacifico text-blue-light text-sm hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
+            <button class="bg-blue-100 hover:bg-blue-200 font-bold py-2 px-4 rounded-lg pacifico text-dark-blue text-sm delete-btn" data-id="{{id}}">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
         </div>
     </div>
 </div>
