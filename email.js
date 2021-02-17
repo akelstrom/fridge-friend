@@ -1,9 +1,9 @@
 const nodemailer = require('nodemailer');
 const ejs = require('ejs');
-const db = require('./models');
+/* const db = require('./models'); */
 //console.log(db);
-const User = db['User'];
-const Inventory = db['Inventory'];
+/* const User = db['User'];
+const Inventory = db['Inventory']; */
 //console.log(User);
 
 /* db.Inventory.findAll({
@@ -95,10 +95,6 @@ function sendExpiredEmail() {
         }
     });
 };
-
-/* sendWelcomeEmail();
-sendExpiringEmail();
-sendExpiredEmail(); */
 
 /* const currentDate = new Date();
 const expirationDate = new Date(2021, 01, 16);
