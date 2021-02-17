@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const ejs = require('ejs');
 const { Inventory, User } = require('./models');
 
-Inventory.findAll({
+/* Inventory.findAll({
     attributes: ['item_name', 'expiration_date'],
     include: [
         {
@@ -20,7 +20,7 @@ Inventory.findAll({
         }
         
     });
-});
+}); */
 /* const currentDate = new Date();
 const expirationDate = new Date(2021, 01, 16);
 const difference = (expirationDate - currentDate) / (1000*60*60*24);
