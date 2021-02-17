@@ -1,24 +1,44 @@
 const nodemailer = require('nodemailer');
 const ejs = require('ejs');
-/* const db = require('./models'); */
-//console.log(db);
-/* const User = db['User'];
-const Inventory = db['Inventory']; */
-//console.log(User);
+const { Inventory, User } = require('./models');
 
-/* db.Inventory.findAll({
-    attributes: ['item_name','expiration_date'],
+Inventory.findAll({
+    attributes: ['item_name', 'expiration_date'],
     include: [
         {
             model: User,
-            attributes: ['email']
+            attributes: ['email', 'username']
         }
     ]
 }).then(data => {
-    //console.log(data);
-}); */
-
-
+    data.forEach(function(item, index, array) {
+        const currentDate = new Date();
+        const expirationDate = new Date(item.expiration_date);
+        const dayDifference = (expirationDate - currentDate) / (1000*60*60*24);
+        if (item.expiration_date) {
+            console.log(item.user.username, item.user.email, item.item_name, item.expiration_date, expirationDate, dayDifference);
+        }
+        
+    });
+});
+/* const currentDate = new Date();
+const expirationDate = new Date(2021, 01, 16);
+const difference = (expirationDate - currentDate) / (1000*60*60*24);
+//const differenceFormatted = difference / ;
+console.log(currentDate);
+console.log(expirationDate);
+console.log(difference);
+//console.log(differenceFormatted);
+function testEmail() {
+    if (difference <= 3 && difference > 0) {
+        console.log('Expiring soon!');
+    } else if (difference <= 0) {
+        console.log('Expired!');
+    } else {
+        console.log('Food is still fresh!');
+    }
+};
+testEmail(); */
 require('dotenv').config();
 
 const transporter = nodemailer.createTransport({
@@ -96,24 +116,7 @@ function sendExpiredEmail() {
     });
 };
 
-/* const currentDate = new Date();
-const expirationDate = new Date(2021, 01, 16);
-const difference = (expirationDate - currentDate) / (1000*60*60*24);
-//const differenceFormatted = difference / ;
-console.log(currentDate);
-console.log(expirationDate);
-console.log(difference);
-//console.log(differenceFormatted);
-function testEmail() {
-    if (difference <= 3 && difference > 0) {
-        console.log('Expiring soon!');
-    } else if (difference <= 0) {
-        console.log('Expired!');
-    } else {
-        console.log('Food is still fresh!');
-    }
-};
-testEmail(); */
+
 
 
 

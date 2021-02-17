@@ -38,6 +38,6 @@ app.use(require("./controllers/"));
 
 // Turn on connection to the db and server
 // Switch to true when clearing/reseting db, should be kept at false
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log("Now listening!"));
 });
