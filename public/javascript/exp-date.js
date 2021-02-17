@@ -1,6 +1,7 @@
 function auditExpDate() {
     const expDates = document.querySelectorAll('.exp-date');
     const expDatesBorder = document.querySelectorAll('.exp-date-border');
+    const expiredText = document.querySelectorAll('.expired-text');
     for (i = 0; i < expDates.length; i++) {
         const currentDate = new Date();
         const dateString = expDates[i].innerText;
@@ -14,9 +15,11 @@ function auditExpDate() {
             expDatesBorder[i].classList.add('border-pink');
         } else if (difference <= 0) {
             expDates[i].classList.remove('text-blue', 'text-pink');
+            expDates[i].classList.add('text-blue-light');
             expDatesBorder[i].classList.remove('border-transparent', 'border-blue', 'border-pink');
             expDatesBorder[i].classList.add('bg-red');
             expDatesBorder[i].classList.add('border-white');
+            expiredText[i].textContent = 'Expired:';
             
         } else {
             expDates[i].classList.remove('text-pink', 'text-red-500');

@@ -10,9 +10,8 @@
             </div>
             {{#if expiration_date}}
             <div class="exp-date-border border rounded border-transparent">
-                <p class="text-sm text-blue-light">Expires: 
-                    <span class="exp-date">{{format_date expiration_date}}</span>
-                </p>
+                <p class="text-sm text-blue-light expired-text">Expires:</p> 
+                <span class="exp-date">{{format_date expiration_date}}</span>
             </div>
             {{/if}}
             <button class="hover:bg-blue font-bold py-2 px-4 border border-blue-light rounded-lg pacifico text-blue-light text-sm delete-btn" data-id="{{id}}">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
