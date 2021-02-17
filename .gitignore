@@ -1,0 +1,4 @@
+node_modules
+.DS_Store
+.env
+public/stylesheets/production_style.css

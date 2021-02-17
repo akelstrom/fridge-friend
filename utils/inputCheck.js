@@ -1,0 +1,1 @@
+// Function that checks if an object has the right properties for insertion

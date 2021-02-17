@@ -1,0 +1,50 @@
+<div class="flex flex-wrap">
+  <div class="w-1/2 h-screen bg-pink">
+    {{!-- this is where the icons will go --}}
+
+    <div class="inset-x-0 bottom-0">
+      {{!-- this is where text will go about the app --}}
+      <h1 class="pl-10 text-2xl text-center">Keep your fridge contents up to date!</h1>
+      <p class="text-center pl-5 pr-5 pt-5 text-sm">Welcome to Fridge Friend! Your reliable pal that will
+        not only help you keep track of the items in your fridge, but also hit you up when things
+        are about to go expire! As your friend, we are dedicated to helping you reduce waste, and make the most out of
+        the food in your fridge by giving you the ability to add items, adjust items, and
+        get rid of items.
+      </p>
+    </div>
+  </div>
+
+  <div class="w-1/2 h-screen">
+
+    <div class="title">
+      <h1 class="text-5xl text-center mt-10">Fridge Friend</h1>
+    </div>
+    {{!--form for user LOGIN input --}}
+      <form class="login-form p-10">
+        <div>
+          <H6 class="font-extralight text-sm">email</H6>
+          <label for="email-login"></label>
+          <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg" type="text"
+            id="email-login" />
+        </div>
+        <div>
+          <H6 class="font-extralight text-sm">password</H6>
+          <label for="password-login"></label>
+          <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg" type="password"
+            id="password-login" />
+        </div>
+        <div>
+          <button
+            class="pacifico font-extralight text-dark-blue text-sm p-1.5 mt-2 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg"
+            type="submit">login</button>
+        </div>
+      </form>
+
+{{!-- to be rerouted to the signup page --}}
+       <div class="new-user text-sm p-10">
+        Are you new to Fridge Friend?
+        <br>
+        Click <a href="/signup" class="text-dark-blue">here</a> to sign up!
+    </div>
+  </div>
+</div>
