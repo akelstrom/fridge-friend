@@ -6,13 +6,14 @@
   "scripts": {
     "test": "jest",
     "start": "node server.js",
-    "buildcss": "postcss public/stylesheets/style.css -o public/stylesheets/production_style.css"
+    "buildcss": "postcss public/stylesheets/style.css -o public/stylesheets/production_style.css",
+    "build": "postcss public/stylesheets/style.css -o public/stylesheets/production_style.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akelstrom/refrigerator.git"
   },
-  "author": "Alexandra Kelstrom, Stefanie Tinsley, Zihao Zhang & Joshua Beedle",
+  "author": "Alexandra Kelstrom, Stefanie Tinsley & Joshua Beedle",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/akelstrom/refrigerator/issues"
