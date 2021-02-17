@@ -37,7 +37,7 @@ btn.onclick = function() {
       modal.style.display = "none";
     }
   };
-}
+
 
 // When the user clicks on the button it subtracts qty 
 minus.onclick = function() {
@@ -48,7 +48,7 @@ minus.onclick = function() {
 plus.onclick = function() {
   this.parentNode.querySelector('input[type=number]').stepUp()
 } 
-
+}
 // Puts today's date as the minimum date for the calendar
 let today = new Date();
 let dd = today.getDate();
@@ -62,3 +62,4 @@ let yyyy = today.getFullYear();
   }
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById('expDate').setAttribute('min', today);
+
