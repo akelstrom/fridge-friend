@@ -1,54 +1,17 @@
 {{!-- Nav --}}
 <nav class="flex items-center justify-between flex-wrap bg-blue-light p-6">
-    <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <div class="flex md:items-center flex-shrink-0 text-white">
         <span class="text-5xl">
-            <h1 class="pacifico text-dark-blue">Fridge Friend</h1>
+            <h1 class="pacifico ml-4 md:ml-0 text-dark-blue text-center lg:text-left">Fridge Friend</h1>
         </span>
     </div>
-    <div class="grid grid-rows-1 grid-flow-col gap-2 justify-evenly pl-10">
-        <div class="py-2">
-            <img src="/images/fridge friend icons-01.png" width="80px" height="80px"
-                class="bg-red border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-05.png" width="80px" height="80px"
-                class="bg-dark-blue border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-06.png" width="80px" height="80px"
-                class="bg-pink border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-07.png" width="80px" height="80px"
-                class="bg-blue border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-08.png" width="80px" height="80px"
-                class="bg-red border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-09.png" width="80px" height="80px"
-                class="bg-dark-blue border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-10.png" width="80px" height="80px"
-                class="bg-pink border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-04.png" width="80px" height="80px"
-                class="bg-blue border-white rounded-full">
-        </div>
-        <div class="py-2">
-            <img src="/images/fridge friend icons-02.png" width="80px" height="80px"
-                class="bg-red border-white rounded-full">
-        </div>
-    </div>
-    <div class="w-full block justify-end flex-grow sm:flex sm:items-center sm:w-auto">
+ 
+    <div class="w-full flex justify-end flex-grow sm:flex items-center sm:w-auto">
         <div>
             <a id="logout"
                 class="inline-flex text-sm px-4 py-2 leading-none pacifico cursor-pointer
                text-dark-blue pacifico p-1.5 mt-2 hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg">
-                logout
+                Logout
             </a>
         </div>
     </div>
@@ -56,56 +19,57 @@
 {{!-- Sidebar & Main Content Container --}}
 <div class="flex-wrap md:flex">
     {{!-- Sidebar Content --}}
-    <div class="my-0 md:w-1/4 md:h-screen w-screen bg-white">
+    <div class="md:w-1/4 md:h-screen w-screen bg-white">
         <button type="button" id="myBtn"
-            class="pacifico mt-3 w-full inline-flex justify-center pacifico text-dark-blue text-sm p-1.5 mt-2 bg-blue-light hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg">
-            add item
+            class="pacifico w-full inline-flex justify-center pacifico text-dark-blue text-xl p-1.5 mt-2 bg-pink hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg">
+            Add Item
         </button>
 
-
-        <div class="category-buttons">
-            <h6 class="pacifico text-lg text-dark-blue">Filter by Category</h6>
+<div class="bg-blue-light mt-3 rounded-lg">
+        <h6 class="pacifico text-xl text-dark-blue text-center">Filter by Category</h6>
+        <div class="category-buttons grid grid-cols-4 md:gap-2 md:grid-cols-2 bg-blue-light rounded-lg p-5 justify-items-center">
              <button type="button" id="all" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="0">
-                    All
+                    class="pacifico mt-3 pacifico text-dark-blue text-sm p-1.5 mt-2  flex-col"
+                    value="0"> All
+                    <img src="/images/fridge friend icons-02.png" class="bg-blue border-white rounded-full hover:bg-dark-blue">
                 </button>
                 <button type="button" id="fruit" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="1">
-                    Fruits
+                    class="pacifico mt-3  pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="1"> Fruits
+                    <img src="/images/fridge friend icons-05.png" class="bg-red border-white rounded-full hover:bg-blue">
                 </button>
                 <button type="button" id="veggies" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="2">
-                    Veggies
+                    class="pacifico mt-3  pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="2"> Veggies
+                    <img src="/images/fridge friend icons-06.png" class="bg-pink border-white rounded-full hover:bg-blue">
                 </button>
                  <button type="button" id="meat-and-seafood" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="3">
-                    Meat and Seafood
+                    class="pacifico mt-3   pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="3"> Meat & Seafood
+                   <img src="/images/fridge friend icons-08.png" class="bg-dark-blue border-white rounded-full hover:bg-blue">
                 </button>
                   <button type="button" id="dairy-and-eggs" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="4">
-                    Dairy and Eggs
+                    class="pacifico mt-3  pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="4"> Dairy & Eggs
+                  <img src="/images/fridge friend icons-01.png" class="bg-red border-white rounded-full hover:bg-blue">
                 </button>
                 <button type="button" id="drinks" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="5">
-                    Drinks
+                    class="pacifico mt-3 pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="5"> Drinks
+                    <img src="/images/fridge friend icons-07.png" class="bg-pink border-white rounded-full hover:bg-blue">
                 </button>
                  <button type="button" id="condiments" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="6">
-                    Condiments
+                    class="pacifico mt-3 pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="6"> Condiments
+                    <img src="/images/fridge friend icons-09.png" class="bg-blue border-white rounded-full hover:bg-dark-blue">
                 </button>
                  <button type="button" id="miscellaneous" name="category_name"
-                    class="pacifico mt-3 w-full inline-flex justify-center pacifico text-blue-light text-sm p-1.5 mt-2 bg-dark-blue hover:bg-blue focus:outline-none focus:ring-2 focus:ring-opacity-50 rounded-lg"
-                    value="7">
-                    Miscellaneous
+                    class="pacifico mt-3 pacifico text-dark-blue text-sm p-1.5 mt-2 flex-col"
+                    value="7"> Miscellanous
+                    <img src="/images/fridge friend icons-10.png" class="bg-dark-blue border-white rounded-full hover:bg-blue">
                 </button>
         </div>
+    </div>
         {{!-- {{#if inventories}}
         <h2 class="pacifico capitalize text-4xl text-dark-blue center">Shopping List</h2>
 
@@ -115,7 +79,7 @@
     {{!-- Main Content --}}
     <div class="md:w-3/4 md:h-screen w-screen bg-white">
         {{!-- Welcome Message Container --}}
-        <div class="container md:mt-5 mx-auto px-4">
+        <div class="container mt-5 md:mt-5 mx-auto px-4">
             {{#if inventories}}
             <h2 class="pacifico capitalize text-xl text-dark-blue">hello, {{getUsername inventories}}! here's what's in
                 your fridge!</h2>

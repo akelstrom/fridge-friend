@@ -8,20 +8,21 @@ function auditExpDate() {
         const difference = (expDate - currentDate) / (1000*60*60*24);
         
         if (difference <= 3 && difference > 0) {
-            expDates[i].classList.remove('text-green-500', 'text-red-500');
-            expDatesBorder[i].classList.remove('border-transparent', 'border-green-500', 'border-red-500');
-            expDates[i].classList.add('text-yellow-500');
-            expDatesBorder[i].classList.add('border-yellow-500');
+            expDates[i].classList.remove('text-blue', 'text-red');
+            expDatesBorder[i].classList.remove('border-transparent', 'border-blue', 'border-red');
+            expDates[i].classList.add('text-pink');
+            expDatesBorder[i].classList.add('border-pink');
         } else if (difference <= 0) {
-            expDates[i].classList.remove('text-green-500', 'text-yellow-500');
-            expDatesBorder[i].classList.remove('border-transparent', 'border-green-500', 'border-yellow-500');
-            expDates[i].classList.add('text-red-500');
-            expDatesBorder[i].classList.add('border-red-500');
+            expDates[i].classList.remove('text-blue', 'text-pink');
+            expDatesBorder[i].classList.remove('border-transparent', 'border-blue', 'border-pink');
+            expDatesBorder[i].classList.add('bg-red');
+            expDatesBorder[i].classList.add('border-white');
+            
         } else {
-            expDates[i].classList.remove('text-yellow-500', 'text-red-500');
-            expDatesBorder[i].classList.remove('border-transparent', 'border-yellow-500', 'border-red-500');
-            expDates[i].classList.add('text-green-500');
-            expDatesBorder[i].classList.add('border-green-500');
+            expDates[i].classList.remove('text-pink', 'text-red-500');
+            expDatesBorder[i].classList.remove('border-transparent', 'border-pink', 'border-red');
+            expDates[i].classList.add('text-blue');
+            expDatesBorder[i].classList.add('border-blue');
         }
     }
 }

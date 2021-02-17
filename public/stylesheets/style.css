@@ -18,6 +18,11 @@ h1 {
 .fas {
     color: #ddfff7;
 }
+
+button img {
+    height: 80px;
+    width: 80px;
+}
 /* Alert Styles Start */
 /*Toast open/load animation*/
 .alert-toast {
