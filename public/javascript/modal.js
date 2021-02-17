@@ -21,10 +21,14 @@ var plus = document.getElementById("plusBtn");
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
+  /* const errorToast = document.querySelector('#alert-toast');
+  errorToast.classList.add('hidden'); */
 } 
   // When the user clicks on cancel button, close the modal
   cancel.onclick = function () {
     modal.style.display = "none";
+    const errorToast = document.querySelector('#alert-toast');
+  errorToast.classList.add('hidden');
   };
 
   // When the user clicks anywhere outside of the modal, close it
@@ -45,3 +49,16 @@ plus.onclick = function() {
   this.parentNode.querySelector('input[type=number]').stepUp()
 } 
 
+// Puts today's date as the minimum date for the calendar
+let today = new Date();
+let dd = today.getDate();
+let mm = today.getMonth() + 1;
+let yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = '0' + dd
+  }
+  if (mm < 10) {
+    mm = '0' + mm
+  }
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById('expDate').setAttribute('min', today);
