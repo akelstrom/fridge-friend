@@ -5,7 +5,8 @@ const filterButtons = document.querySelectorAll('button[name=category_name]');
 async function filterFormHandler(event) {
   event.preventDefault();
 
-  const category_id = event.target.value
+  const category_id = event.currentTarget.value
+  console.log(category_id)
 
   if(category_id === "0") {
     location.replace("/dashboard");
