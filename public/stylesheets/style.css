@@ -54,7 +54,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 /* Quantity Styles End */
 
-/* THIS IS FOR THE ICON ANIMATION
+THIS IS FOR THE ICON ANIMATION
 
 button:hover{
     animation: wiggle 0.6s;
@@ -72,4 +72,3 @@ button:hover{
     }
 }
 
-*/ 
