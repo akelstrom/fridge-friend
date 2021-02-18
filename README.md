@@ -24,6 +24,7 @@ https://fridg3-fri3nd.herokuapp.com/
 * EJS
 * Nodemailer
 * Tailwind CSS
+* Adobe Illustrator
 * Jest
 * bcrypt
 ## Contributors
@@ -31,7 +32,7 @@ https://fridg3-fri3nd.herokuapp.com/
 * Stefanie Tinsley
 * Joshua Beedle
 ## Credits
-Special thanks to our awesome TAs and tutors, name, name, name, etc.
+Special thanks to our awesome TAs, Andy Durette, Symone Varnado, Nate Sopko, Chris Hackett, or instructor Chase Clettenberg, and tutor, Jon Jackson!
 ## Questions
 If you have any additional questions please reach us through email or GitHub.
 
