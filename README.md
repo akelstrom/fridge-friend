@@ -42,13 +42,13 @@ Special thanks to our awesome TAs, Andy Durette, Symone Varnado, Nate Sopko, Chr
 ## Questions
 If you have any additional questions please reach us through email or GitHub.
 
-GitHub: 
+### GitHub: 
 
 [Alexandra Kelstrom](https://github.com/akelstrom),
 [Stefanie Tinsley](https://github.com/steftinsley),
 [Joshua Beedle](https://github.com/jbeedle19)
 
-Email: 
+### Email: 
 
 [Alexandra Kelstrom](mailto:akelstrom@gmail.com),
 [Stefanie Tinsley](mailto:stefaniectinsley@gmail.com),
