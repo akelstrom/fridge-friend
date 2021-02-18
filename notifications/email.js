@@ -37,7 +37,7 @@ function sendWelcomeEmail(userEmail, username) {
 
 function sendExpiringEmail() {
     Inventory.findAll({
-        attributes: ['id', 'item_name', 'expiration_date', 'sentExpiring'],
+        attributes: ['id', 'item_name', 'expiration_date', 'sent_expiring'],
         include: [
             {
                 model: User,
@@ -50,7 +50,7 @@ function sendExpiringEmail() {
             const currentDate = new Date();
             const expirationDate = new Date(item.expiration_date);
             const dayDifference = (expirationDate - currentDate) / (1000*60*60*24);
-            return dayDifference >0 && dayDifference <= 3 && item.expiration_date && !item.sentExpiring;
+            return dayDifference >0 && dayDifference <= 3 && item.expiration_date && !item.sent_expiring;
         })
         filteredData.forEach(function(item) {
             ejs.renderFile(__dirname + '/expiring-email.ejs', { item: item }, function (err, str) {
@@ -70,7 +70,7 @@ function sendExpiringEmail() {
                             console.log('Email sent: ' + info.response);
                             Inventory.update(
                                 {
-                                    sentExpiring: true
+                                    sent_expiring: true
                                 },
                                 {
                                     where: {
@@ -91,7 +91,7 @@ function sendExpiringEmail() {
 
 function sendExpiredEmail() {
     Inventory.findAll({
-        attributes: ['id', 'item_name', 'expiration_date', 'sentExpired'],
+        attributes: ['id', 'item_name', 'expiration_date', 'sent_expired'],
         include: [
             {
                 model: User,
@@ -104,7 +104,7 @@ function sendExpiredEmail() {
             const currentDate = new Date();
             const expirationDate = new Date(item.expiration_date);
             const dayDifference = (expirationDate - currentDate) / (1000*60*60*24);
-            return dayDifference <=0 && item.expiration_date && !item.sentExpired;
+            return dayDifference <=0 && item.expiration_date && !item.sent_expired;
         })
         filteredData.forEach(function(item) {
             ejs.renderFile(__dirname + '/expired-email.ejs', { item: item }, function (err, str) {
@@ -124,7 +124,7 @@ function sendExpiredEmail() {
                             console.log('Email sent: ' + info.response);
                             Inventory.update(
                                 {
-                                    sentExpired: true
+                                    sent_expired: true
                                 },
                                 {
                                     where: {
