@@ -23,4 +23,4 @@ VALUES
     ('french onion dip', 1, '2021-02-28', 1, 7),
     ('chicken breasts', 1, '2021-02-28', 1, 3),
     ('tuna fillets', 2, '2021-02-28', 1, 3),
-    ('tortillas', 3, '2021-02-28', 1, 7); */
+    ('tortillas', 3, '2021-02-28', 1, 7); 
