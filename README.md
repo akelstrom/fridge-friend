@@ -44,12 +44,8 @@ If you have any additional questions please reach us through email or GitHub.
 
 ### GitHub: 
 
-[Alexandra Kelstrom](https://github.com/akelstrom)|
-[Stefanie Tinsley](https://github.com/steftinsley)|
-[Joshua Beedle](https://github.com/jbeedle19)
+[Alexandra Kelstrom](https://github.com/akelstrom) | [Stefanie Tinsley](https://github.com/steftinsley) | [Joshua Beedle](https://github.com/jbeedle19)
 
 ### Email: 
 
-[Alexandra Kelstrom](mailto:akelstrom@gmail.com)|
-[Stefanie Tinsley](mailto:stefaniectinsley@gmail.com)|
-[Joshua Beedle](mailto:josh.beedle@gmail.com)
+[Alexandra Kelstrom](mailto:akelstrom@gmail.com) | [Stefanie Tinsley](mailto:stefaniectinsley@gmail.com) | [Joshua Beedle](mailto:josh.beedle@gmail.com)
