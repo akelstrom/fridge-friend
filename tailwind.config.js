@@ -7,11 +7,11 @@ module.exports = {
         transparent: "transparent",
         current: "currentColor",
         dark: {
-          blue: "#577399"
+          blue: "#577399",
         },
         blue: {
           light: "#ddfff7",
-          DEFAULT: "#93E1d8"
+          DEFAULT: "#93E1d8",
         },
         pink: {
           DEFAULT: "#ffA69e",
@@ -24,27 +24,21 @@ module.exports = {
         },
       },
     },
-  },
-};
-
-// tailwind.config.js
-module.exports = {
-  theme: {
     screens: {
-      'sm': '300px',
+      sm: "300px",
       // => @media (min-width: 640px) { ... }
 
-      'md': '768px',
+      md: "768px",
       // => @media (min-width: 768px) { ... }
 
-      'lg': '1024px',
+      lg: "1024px",
       // => @media (min-width: 1024px) { ... }
 
-      'xl': '1280px',
+      xl: "1280px",
       // => @media (min-width: 1280px) { ... }
 
-      '2xl': '1536px',
+      "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
-    }
-  }
-}
+    },
+  },
+};
