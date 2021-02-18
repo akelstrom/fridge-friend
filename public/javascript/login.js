@@ -30,9 +30,9 @@ async function signupFormHandler(event) {
     } else {
       toastContent.innerHTML = "A user with this account already exsists.";
       toast.classList.remove("hidden");
-      // setTimeout(function () {
-      //   location.reload();
-      // }, 5000);
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     }
   }
 }
