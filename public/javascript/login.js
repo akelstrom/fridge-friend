@@ -1,3 +1,8 @@
+//toast alerts for user login errors
+const toastContent = document
+  .querySelector("#alert-toast")
+  .querySelector("#toast-content");
+const toast = document.querySelector("#alert-toast");
 
 // javascript logic for signup here
 async function signupFormHandler(event) {
@@ -23,12 +28,16 @@ async function signupFormHandler(event) {
       console.log("success");
       window.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      toastContent.innerHTML = "A user with this account already exsists.";
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     }
   }
 }
 
-//js logic for login form -- so far getting a "304??? and errors in the server"
+//js logic for login form --
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -44,11 +53,29 @@ async function loginFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response);
+
     if (response.ok) {
       window.location.replace("/dashboard");
+    } else if (response.status === 400) {
+      toastContent.innerHTML =
+        "Your email/password is incorrect. Please try again!";
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
+    } else if (response.status === 404) {
+      toastContent.innerHTML =
+        "No user is found with this id. Please try again!";
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     } else {
-      alert(response.statusText);
+      toastContent.innerHTML = response.status;
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     }
   }
 }

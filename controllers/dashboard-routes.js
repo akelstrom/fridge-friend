@@ -1,15 +1,16 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { User, Inventory, Category } = require('../models');
+const { User, Inventory } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    Inventory.findAll({
+    let query = {user_id: req.session.user_id};
+    if (req.query.category) {
+        query.category_id = req.query.category;
+    }
+        Inventory.findAll({
         // Display descending order by expiration date
         order: [['expiration_date', 'ASC']],
-        where: {
-            user_id: req.session.user_id
-        },
+        where: query,
         include: [
             {
                 model: User,

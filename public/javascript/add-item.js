@@ -8,7 +8,10 @@ async function newFormHandler(event) {
   const item_name = document.querySelector('input[name="item_name"]').value;
   const quantity = document.querySelector('input[name="new_quantity"]').value;
   const category_id = document.querySelector('select[name="category_name"]').value;
-  const expiration_date = document.querySelector('input[name="expiration_date"]').value;
+  let expiration_date = document.querySelector('input[name="expiration_date"]').value;
+  if (expiration_date === '') {
+    expiration_date = null;
+  }
 
   const response = await fetch(`/api/inventory`, {
     method: "POST",

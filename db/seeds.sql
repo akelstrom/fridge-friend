@@ -1,3 +1,5 @@
+USE refrigerator_db;
+
 /* Populate Category table */
 INSERT INTO category (category_name)
 VALUES
@@ -8,8 +10,9 @@ VALUES
     ('Drinks'),
     ('Condiments'),
     ('Miscellaneous');
-/* Populate Inventory table */
-INSERT INTO inventory (item_name, quantity, expiration_date, user_id, category_id)
+
+
+/* INSERT INTO inventory (item_name, quantity, expiration_date, user_id, category_id)
 VALUES
     ('apple', 6, null, 1, 1),
     ('mozzarella', 1, '2021-02-28', 1, 4),
@@ -20,4 +23,4 @@ VALUES
     ('french onion dip', 1, '2021-02-28', 1, 7),
     ('chicken breasts', 1, '2021-02-28', 1, 3),
     ('tuna fillets', 2, '2021-02-28', 1, 3),
-    ('tortillas', 3, '2021-02-28', 1, 7);
+    ('tortillas', 3, '2021-02-28', 1, 7); */

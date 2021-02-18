@@ -1,11 +1,43 @@
-<div class="flex flex-wrap">
-    <div class="w-1/2 h-screen bg-blue-100">
+<div class="flex-wrap-reverse flex">
+    <div class="lg:w-1/2 w-full bg-dark-blue">
         {{!-- this is where the icons will go --}}
+        <div class="h-80 grid grid-rows-3 grid-flow-col gap-10 justify-center mt-10 px-5">
+            <div class="py-2">
+                <img src="/images/fridge friend icons-01.png" width="100px" height="100px" class="bg-red rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-05.png" width="100px" height="100px"
+                    class="bg-dark-blue rounded-full border-blue-light border">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-06.png" width="100px" height="100px" class="bg-pink rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-07.png" width="100px" height="100px" class="bg-blue rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-08.png" width="100px" height="100px" class="bg-red rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-09.png" width="100px" height="100px"
+                    class="bg-dark-blue border-blue-light border rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-10.png" width="100px" height="100px" class="bg-pink rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-04.png" width="100px" height="100px" class="bg-blue rounded-full">
+            </div>
+            <div class="py-2">
+                <img src="/images/fridge friend icons-02.png" width="100px" height="100px" class="bg-red rounded-full">
+            </div>
+        </div>
 
-        <div class="inset-x-0 bottom-0">
+        <div class="inset-x-0 lg:p-10">
             {{!-- this is where text will go about the app --}}
-            <h1 class="pl-10 text-2xl text-center">Keep your fridge contents up to date!</h1>
-            <p class="text-center pl-5 pr-5 pt-5 text-sm">Welcome to Fridge Friend! Your reliable pal that will
+            <h1 class="md:pl-10 px-5 text-2xl text-center text-blue-light mt-16">Keep your fridge contents up to date!</h1>
+            <p class="text-center p-5 text-sm text-blue-light">Welcome to Fridge Friend! Your reliable pal
+                that will
                 not only help you keep track of the items in your fridge, but also hit you up when things
                 are about to go expire! As your friend, we are dedicated to helping you reduce waste, and make the most
                 out of
@@ -15,39 +47,47 @@
         </div>
     </div>
 
-    <div class="w-1/2 h-screen">
-        <div class="logo">
-            <h1 class="text-5xl text-center mt-10">Fridge Friend</h1>
-        </div>
-        {{!-- this is the form for user input --}}
+    {{!-- right half start --}}
+    <div class="lg:w-1/2 lg:h-screen w-full mb-10">
 
-        <form class="signup-form p-10" name="signup">
+        <div class="title lg:mt-16 mt-10">
+            <h1 class="text-5xl text-center text-dark-blue">Fridge Friend</h1>
+        </div>
+        {{!--form for user SIGNIN input --}}
+        <form class="signup-form space-y-10 sm:ml-24 md:ml-36 xl:ml-36 ml-24 pt-10">
             <div>
-                <H6 class="font-extralight text-sm">username</H6>
+                <H6 class="pacifico text-sm text-dark-blue pb-3">username</H6>
                 <label for="username-signup"></label>
-                <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none" type="text"
-                    id="username-signup" />
+                <input
+                    class="shadow-sm border-b-2 border-blue rounded-sm focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg w-48 sm:w-76 md:w-96"
+                    type="text" id="username-signup" />
             </div>
+
             <div>
-                <H6 class="font-extralight text-sm">email</H6>
+                <H6 class="pacifico text-sm text-dark-blue pb-3">Email</H6>
                 <label for="email-signup"></label>
-                <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none" type="text"
-                    id="email-signup" />
+                <input
+                    class="shadow-sm border-b-2 border-blue rounded-sm focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg w-48 sm:w-76 md:w-96"
+                    type="email" id="email-signup" />
             </div>
             <div>
-                <H6 class="font-extralight text-sm">password</H6>
+                <H6 class="pacifico text-sm text-dark-blue pb-3">Password</H6>
                 <label for="password-signup"></label>
-                <input class="shadow-sm border-b-2 border-blue-200 rounded-sm focus:outline-none" type="password"
-                    id="password-signup" />
+                <input
+                    class="shadow-sm border-b-2 border-blue rounded-sm focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg w-48 sm:w-76 md:w-96"
+                    type="password" id="password-signup" />
             </div>
             <div>
                 <button
-                    class="pacifico font-extralight text-sm p-1.5 mt-2 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-opacity-50 rounded-lg"
-                    type="submit">sign up</button>
+                    class="pacifico text-blue-light bg-dark-blue text-sm p-1.5 mt-2 hover:bg-blue focus:outline-none focus:ring-2 focus:ring-blue focus:ring-opacity-50 rounded-lg"
+                    type="submit">Sign Up</button>
             </div>
         </form>
 
-    </div>
+        <div class="new-user text-sm lg:pt-10 pt-5 text-dark-blue text-center">
+            Already have an account with us? 
+            <br>
+            Click <a href="/" class="text-pink">here</a> to login!
+        </div>
 
- 
-</div>
+    </div>

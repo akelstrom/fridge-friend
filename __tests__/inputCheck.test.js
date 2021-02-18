@@ -1,1 +1,0 @@
-// Test for function that checks for correct input before adding to DB

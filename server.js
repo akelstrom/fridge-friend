@@ -3,7 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const helpers = require('./utils/helpers');
-/* const morgan = require('morgan'); */
+const { sendExpiringEmail, sendExpiredEmail } = require('./notifications/email');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,7 +23,6 @@ const sess = {
 };
 
 app.use(session(sess));
-/* app.use(morgan("tiny")); */
 
 const hbs = exphbs.create({ helpers });
 
@@ -38,6 +37,10 @@ app.use(require("./controllers/"));
 
 // Turn on connection to the db and server
 // Switch to true when clearing/reseting db, should be kept at false
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
+    setInterval(() => {
+        sendExpiringEmail();
+        sendExpiredEmail();
+    }, 900000);
     app.listen(PORT, () => console.log("Now listening!"));
 });
