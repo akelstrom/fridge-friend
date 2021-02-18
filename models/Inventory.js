@@ -39,11 +39,11 @@ Inventory.init(
                 key: 'id'
             }
         },
-        sentExpiring: {
+        sent_expiring: {
             type: DataTypes.BOOLEAN,
             default: false
         },
-        sentExpired: {
+        sent_expired: {
             type: DataTypes.BOOLEAN,
             default: false
         }

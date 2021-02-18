@@ -41,6 +41,6 @@ sequelize.sync({ force: false }).then(() => {
     setInterval(() => {
         sendExpiringEmail();
         sendExpiredEmail();
-    }, 3600000);
+    }, 900000);
     app.listen(PORT, () => console.log("Now listening!"));
 });
