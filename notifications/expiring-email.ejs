@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <h1>Hello, User!</h1>
-    <p>Uh oh, it looks like some of your fridge items are going to expire soon! Please take a look
-        at your fridge and try and use the items before they spoil. 
+    <h1>Hello, <%= item.user.username %>!</h1>
+    <p>Uh oh, it looks like <%= item.item_name %> is going to expire soon! Please take a look
+        at your fridge and try and use it before it spoils. 
     </p>
     <p>Regards,<br>
         The Fridge Friend Team

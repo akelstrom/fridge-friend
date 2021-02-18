@@ -38,6 +38,14 @@ Inventory.init(
                 model: 'category',
                 key: 'id'
             }
+        },
+        sentExpiring: {
+            type: DataTypes.BOOLEAN,
+            default: false
+        },
+        sentExpired: {
+            type: DataTypes.BOOLEAN,
+            default: false
         }
     },
     {
