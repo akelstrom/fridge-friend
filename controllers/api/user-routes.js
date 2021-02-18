@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const { sendWelcomeEmail } = require('../../notifications/email');
+const { sendWelcomeEmail } = require("../../notifications/email");
 
 // GET /api/users
 router.get("/", (req, res) => {
@@ -19,13 +19,20 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    attributes: {
+      exclude: ["password"],
+    },
   })
     .then((dbUserData) => {
       if (!dbUserData) {
         res.status(404).json({ message: "No user found with this id" });
         return;
       }
-      res.json(dbUserData);
+      res.json({
+        id: dbUserData.id,
+        username: dbUserData.username,
+        email: dbUserData.email,
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -69,7 +76,7 @@ router.post("/login", (req, res) => {
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.statusMessage = "No user with that email address."
+      res.statusMessage = "No user with that email address.";
       res.status(400).end();
       return;
     }

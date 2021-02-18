@@ -1,3 +1,9 @@
+//toast alerts for user login errors
+const toastContent = document
+  .querySelector("#alert-toast")
+  .querySelector("#toast-content");
+const toast = document.querySelector("#alert-toast");
+
 // javascript logic for signup here
 async function signupFormHandler(event) {
   event.preventDefault();
@@ -22,7 +28,11 @@ async function signupFormHandler(event) {
       console.log("success");
       window.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+      toastContent.innerHTML = "A user with this account already exsists.";
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     }
   }
 }
@@ -33,13 +43,6 @@ async function loginFormHandler(event) {
 
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
-
-  //toast alerts for user login errors
-  const toastContent = document
-    .querySelector("#alert-toast")
-    .querySelector("#toast-content");
-
-  const toast = document.querySelector("#alert-toast")
 
   if (email && password) {
     const response = await fetch("/api/users/login", {
@@ -52,19 +55,27 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-        window.location.replace("/dashboard");
+      window.location.replace("/dashboard");
     } else if (response.status === 400) {
-        toastContent.innerHTML = "Your email/password is incorrect. Please try again!";
-        toast.classList.remove("hidden");
-        setTimeout( function() {
-          location.reload();
-        },5000);
+      toastContent.innerHTML =
+        "Your email/password is incorrect. Please try again!";
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     } else if (response.status === 404) {
-        toastContent.innerHTML = "No user is found with this id. Please try again!";
-        toast.classList.remove("hidden");
+      toastContent.innerHTML =
+        "No user is found with this id. Please try again!";
+      toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     } else {
       toastContent.innerHTML = response.status;
       toast.classList.remove("hidden");
+      setTimeout(function () {
+        location.reload();
+      }, 5000);
     }
   }
 }
