@@ -1,7 +1,7 @@
 <div class="flex-1 text-center bg-dark-blue px-5 m-2 border rounded draggable" draggable="true">
     <div class="items-center">
         <div class="m-4 space-y-2">
-            <h2 class="pacifico capitalize text-lg text-blue-light">{{item_name}}</h2>
+            <h2 class="capitalize text-lg text-blue-light">{{item_name}}</h2>
             <div class="number-input">
                 <p class="text-sm text-blue-light">Quantity: </p>
                 <button class="subtract-qty-btn" data-id="{{id}}" onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ><i class="fas fa-minus"></i></button>
@@ -14,7 +14,7 @@
                 <span class="exp-date">{{format_date expiration_date}}</span>
             </div>
             {{/if}}
-            <button class="hover:bg-blue font-bold py-2 px-4 border border-blue-light rounded-lg pacifico text-blue-light text-sm delete-btn" data-id="{{id}}">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
+            <button class="hover:bg-blue font-bold py-2 px-4 border border-blue-light rounded-lg pacifico text-blue-light text-xs delete-btn" data-id="{{id}}">Delete <i class="ml-2 fas fa-trash-alt"></i></button>
         </div>
     </div>
 </div>
