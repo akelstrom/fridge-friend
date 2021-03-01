@@ -40,12 +40,12 @@ https://fridg3-fri3nd.herokuapp.com/
 ## Credits
 Special thanks to our awesome TAs, Andy Durette, Symone Varnado, Nate Sopko, Chris Hackett, our instructor, Chase Clettenberg, and tutor, Jon Jackson!
 ## Questions
-If you have any additional questions please reach us through email or GitHub.
+If you have any additional questions please reach out to us through email or GitHub.
 
-### GitHub: 
+Name | GitHub | Email
+---- | ------ | -----
+Alexandra Kelstrom | https://github.com/akelstrom | akelstrom@gmail.com
+Stefanie Tinsley |https://github.com/stefaniepires | stefaniectinsley@gmail.com
+Joshua Beedle |https://github.com/jbeedle19 | josh.beedle@gmail.com
 
-[Alexandra Kelstrom](https://github.com/akelstrom) | [Stefanie Tinsley](https://github.com/steftinsley) | [Joshua Beedle](https://github.com/jbeedle19)
 
-### Email: 
-
-[Alexandra Kelstrom](mailto:akelstrom@gmail.com) | [Stefanie Tinsley](mailto:stefaniectinsley@gmail.com) | [Joshua Beedle](mailto:josh.beedle@gmail.com)
